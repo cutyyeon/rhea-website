@@ -61,6 +61,34 @@
     revealRoots.forEach(function (root) { root.classList.add("is-visible"); });
   }
 
+  // ---- Stat count-up ----
+  // Lands the key numbers once as the spec section enters. The final value
+  // is already in the HTML, so no-JS and reduced-motion visitors see it as-is.
+  var counters = document.querySelectorAll("[data-count]");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (counters.length && !reduceMotion && "IntersectionObserver" in window) {
+    var countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        var el = entry.target;
+        var target = Number(el.getAttribute("data-count"));
+        var start = null;
+        var duration = 1200;
+        function tick(now) {
+          if (start === null) start = now;
+          var t = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(target * eased).toLocaleString("en-US");
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        el.textContent = "0";
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { countObserver.observe(el); });
+  }
+
   // ---- Contact form ----
   // PLACEHOLDER: this only validates and shows a local status message.
   // To actually receive submissions, connect this form to a backend —
