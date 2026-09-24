@@ -7,13 +7,15 @@
 <meta name="theme-color" content="#010102" />
 <title>Rhea — 줄기세포 공정을 위한 정밀 원심분리기</title>
 <!-- PLACEHOLDER: 최종 포지셔닝 문구가 확정되면 title/description을 함께 업데이트하세요. -->
-<meta name="description" content="Rhea는 줄기세포 처리 워크플로의 정밀도와 재현성을 위해 설계된 원심분리 장비입니다. 사양서와 인증 정보를 확인하고 문의하세요." />
+<meta name="description" content="Rhea는 줄기세포 처리 워크플로의 정밀도와 재현성을 위해 설계된 원심분리 장비입니다. 사양서와 구매 검토 자료를 요청하세요." />
 <link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml" />
 
+<!-- DESIGN.md "Note on Font Substitutes": Inter for Linear Display/Text,
+     JetBrains Mono for Linear Mono. Hangul falls through to the documented
+     system stack (-apple-system / system-ui). -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 
 <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -21,30 +23,33 @@
 
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
 
-<header class="site-header" data-reveal-root>
+<!-- top-nav -->
+<header class="site-header">
   <div class="header-inner">
     <a class="wordmark" href="#top" aria-label="Rhea 홈으로 이동">
       <!-- PLACEHOLDER: 실제 로고가 도착하면 이 워드마크를 교체하세요. -->
-      <svg class="wordmark-mark" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
-        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <circle cx="16" cy="16" r="2.6" fill="currentColor"/>
-        <line x1="16" y1="2" x2="16" y2="7.4" stroke="currentColor" stroke-width="1.6"/>
-        <line x1="16" y1="24.6" x2="16" y2="30" stroke="currentColor" stroke-width="1.6"/>
-        <line x1="2" y1="16" x2="7.4" y2="16" stroke="currentColor" stroke-width="1.6"/>
-        <line x1="24.6" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.6"/>
+      <svg class="wordmark-mark" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="16" cy="16" r="3" fill="currentColor"/>
+        <line x1="16" y1="2" x2="16" y2="7.4" stroke="currentColor" stroke-width="1.8"/>
+        <line x1="16" y1="24.6" x2="16" y2="30" stroke="currentColor" stroke-width="1.8"/>
+        <line x1="2" y1="16" x2="7.4" y2="16" stroke="currentColor" stroke-width="1.8"/>
+        <line x1="24.6" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.8"/>
       </svg>
       RHEA
     </a>
 
     <nav class="main-nav" aria-label="주요 메뉴">
-      <a href="#overview">개요</a>
-      <a href="#specs">사양</a>
+      <a href="#principles">설계</a>
       <a href="#workflow">워크플로</a>
-      <a href="#certifications">인증</a>
-      <a href="#contact">문의</a>
+      <a href="#specs">사양</a>
+      <a href="#documents">구매 자료</a>
     </nav>
 
-    <a class="btn btn-accent header-cta" href="#contact">자료 요청</a>
+    <div class="header-actions">
+      <a class="btn btn-secondary" href="#contact">문의</a>
+      <a class="btn btn-primary" href="#contact">사양서 요청</a>
+    </div>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="메뉴 열기">
       <span></span><span></span><span></span>
@@ -52,12 +57,11 @@
   </div>
 
   <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" hidden>
-    <a href="#overview">개요</a>
-    <a href="#specs">사양</a>
+    <a href="#principles">설계</a>
     <a href="#workflow">워크플로</a>
-    <a href="#certifications">인증</a>
-    <a href="#contact">문의</a>
-    <a class="btn btn-accent" href="#contact">자료 요청</a>
+    <a href="#specs">사양</a>
+    <a href="#documents">구매 자료</a>
+    <a class="btn btn-primary" href="#contact">사양서 요청</a>
   </nav>
 </header>
 
@@ -65,86 +69,92 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" class="hero" aria-labelledby="hero-heading">
-    <div class="hero-inner">
+    <div class="container">
       <div class="hero-copy">
-        <h1 id="hero-heading">
-          줄기세포 공정을 위해<br />설계된 정밀 원심분리기
-        </h1>
+        <span class="status-badge">공식 사양서 사전 요청 접수 중</span>
+        <h1 id="hero-heading">줄기세포 공정을 위한<br />정밀 원심분리기</h1>
         <!-- PLACEHOLDER: 확정 포지셔닝 문구로 교체 예정 (PRODUCT.md의 Positioning 항목 참고) -->
         <p class="hero-lede">
-          Rhea는 로터 밸런스, 속도·온도 제어의 정밀도를 통해
-          줄기세포 처리 워크플로의 재현성을 지키도록 설계되었습니다.
+          Rhea는 로터 밸런스와 속도·온도 제어의 정밀도로
+          줄기세포 처리 공정의 재현성을 지키도록 설계되었습니다.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-accent" href="#contact">사양서 요청</a>
-          <a class="btn btn-ghost" href="#overview">개요 살펴보기</a>
+          <a class="btn btn-primary" href="#contact">사양서 요청</a>
+          <a class="btn btn-secondary" href="#principles">설계 원칙 보기</a>
         </div>
-        <p class="hero-footnote">
-          줄기세포 연구소 및 바이오 제조 현장의 원심분리 워크플로를 위해 개발되었습니다.
-        </p>
       </div>
 
-      <!-- Not aria-hidden: the SVG carries its own accessible name below, and
-           the caption's "사양 확정 예정" text is real (if pending) content —
-           a wrapper-level aria-hidden previously hid both from screen readers. -->
-      <div class="hero-figure">
-        <svg class="rotor-diagram" viewBox="0 0 420 420" role="img" aria-label="Rhea 로터 구조 다이어그램">
-          <g class="rotor-static">
-            <circle class="rotor-baseplate" cx="210" cy="210" r="176" />
-            <circle class="dim-circle" cx="210" cy="210" r="192" />
-          </g>
-          <g class="rotor-spin">
-            <circle class="rotor-ring" cx="210" cy="210" r="150" />
-            <circle class="rotor-ring rotor-ring-inner" cx="210" cy="210" r="96" />
-            <g class="rotor-slots">
-              <circle cx="210" cy="72" r="14"/>
-              <circle cx="329" cy="141" r="14"/>
-              <circle cx="329" cy="279" r="14"/>
-              <circle cx="210" cy="348" r="14"/>
-              <circle cx="91" cy="279" r="14"/>
-              <circle cx="91" cy="141" r="14"/>
+      <!-- product-screenshot-card: the protagonist panel -->
+      <figure class="product-panel" aria-labelledby="panel-caption">
+        <div class="panel-bar">
+          <span class="mono">RHEA · ROTOR</span>
+          <span class="status-badge">사양 확정 예정</span>
+        </div>
+        <div class="panel-body">
+          <!-- PLACEHOLDER: 공식 제품 사진/렌더가 도착하면 이 다이어그램을 교체하거나 옆에 추가하세요. -->
+          <svg class="rotor-diagram" viewBox="0 0 420 420" role="img" aria-label="Rhea 로터 구조 다이어그램">
+            <g class="rotor-static">
+              <circle class="dim-circle" cx="210" cy="210" r="200" />
+              <circle class="rotor-baseplate" cx="210" cy="210" r="180" />
             </g>
-            <circle class="rotor-hub" cx="210" cy="210" r="20" />
-          </g>
-          <g class="dim-line">
-            <line x1="210" y1="210" x2="210" y2="34" />
-            <line class="dim-tick" x1="198" y1="34" x2="222" y2="34" />
-            <line class="dim-tick" x1="198" y1="210" x2="222" y2="210" />
-          </g>
-        </svg>
-        <p class="rotor-caption">로터 반경 R — <span class="pending-value">사양 확정 예정</span></p>
-      </div>
+            <g class="rotor-spin">
+              <circle class="rotor-ring" cx="210" cy="210" r="152" />
+              <circle class="rotor-ring rotor-ring-inner" cx="210" cy="210" r="96" />
+              <g class="rotor-slots">
+                <circle cx="210" cy="72" r="15"/>
+                <circle cx="329" cy="141" r="15"/>
+                <circle cx="329" cy="279" r="15"/>
+                <circle cx="210" cy="348" r="15"/>
+                <circle cx="91" cy="279" r="15"/>
+                <circle cx="91" cy="141" r="15"/>
+              </g>
+              <circle class="rotor-hub" cx="210" cy="210" r="20" />
+            </g>
+            <g class="dim-line">
+              <line x1="210" y1="210" x2="390" y2="210" />
+              <line x1="390" y1="198" x2="390" y2="222" />
+            </g>
+          </svg>
+
+          <dl class="readout">
+            <div><dt>최대 회전속도</dt><dd class="pending-value">확정 예정</dd></div>
+            <div><dt>최대 원심력 (RCF)</dt><dd class="pending-value">확정 예정</dd></div>
+            <div><dt>온도 제어 범위</dt><dd class="pending-value">확정 예정</dd></div>
+            <div><dt>로터 옵션</dt><dd class="pending-value">확정 예정</dd></div>
+          </dl>
+        </div>
+        <figcaption id="panel-caption" class="panel-caption">로터 반경 R과 모든 수치는 공식 사양서 발행 시 확정됩니다.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- ============ OVERVIEW / PRINCIPLES ============ -->
-  <section id="overview" class="principles" aria-labelledby="principles-heading">
-    <div class="section-inner">
-      <h2 id="principles-heading">설계 원칙</h2>
+  <!-- ============ PRINCIPLES ============ -->
+  <section id="principles" class="section" aria-labelledby="principles-heading">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">설계 원칙</p>
+        <h2 id="principles-heading">공정의 변수를 줄이는 네 가지 설계</h2>
+        <p class="section-lede">줄기세포 공정에서 원심분리는 결과의 편차가 생기기 쉬운 단계입니다.</p>
+      </div>
 
-      <div class="spine" data-reveal-root>
-        <div class="spine-line" aria-hidden="true"></div>
-
-        <article class="spine-item">
-          <span class="spine-tick" aria-hidden="true"></span>
+      <div class="feature-grid" data-reveal-root>
+        <article class="feature-card">
+          <span class="card-index mono">01</span>
           <h3>로터 안정성</h3>
           <p>정밀 밸런싱 설계로 고속 구동 시 진동을 최소화하도록 구성되어 있습니다.</p>
         </article>
-
-        <article class="spine-item">
-          <span class="spine-tick" aria-hidden="true"></span>
+        <article class="feature-card">
+          <span class="card-index mono">02</span>
           <h3>온도 제어</h3>
           <p>세포 생존율에 민감한 공정을 고려해 구동 중 온도 안정성을 유지하도록 설계되었습니다.</p>
         </article>
-
-        <article class="spine-item">
-          <span class="spine-tick" aria-hidden="true"></span>
+        <article class="feature-card">
+          <span class="card-index mono">03</span>
           <h3>워크플로 호환성</h3>
           <p>표준 실험실 소모품 및 튜브 포맷과 호환되는 로터 구성을 지원합니다.</p>
         </article>
-
-        <article class="spine-item">
-          <span class="spine-tick" aria-hidden="true"></span>
+        <article class="feature-card">
+          <span class="card-index mono">04</span>
           <h3>유지보수 접근성</h3>
           <p>현장에서 점검 가능한 모듈형 구조로 다운타임을 줄이도록 설계되었습니다.</p>
         </article>
@@ -153,132 +163,157 @@
     </div>
   </section>
 
-  <!-- ============ SPECS ============ -->
-  <section id="specs" class="specs" aria-labelledby="specs-heading">
-    <div class="section-inner">
-      <h2 id="specs-heading">사양</h2>
-      <p class="section-lede">아래 수치는 공식 사양서 발행 시 확정된 값으로 교체됩니다.</p>
+  <!-- ============ WORKFLOW (changelog-row list) ============ -->
+  <section id="workflow" class="section" aria-labelledby="workflow-heading">
+    <div class="container split">
+      <div class="section-head">
+        <p class="eyebrow">워크플로</p>
+        <h2 id="workflow-heading">공정 안에서 Rhea가 맡는 단계</h2>
+        <p class="section-lede">일반적인 줄기세포 처리 공정 네 단계 중, Rhea는 세포를 농축·분획하는 원심분리 단계를 담당합니다.</p>
+      </div>
 
-      <table class="spec-table">
-        <caption class="visually-hidden">Rhea 제품 사양</caption>
-        <tbody>
-          <tr><th scope="row">모델명</th><td>Rhea</td></tr>
-          <tr><th scope="row">최대 회전속도</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">최대 원심력 (RCF)</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">로터 옵션</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">최대 샘플 용량</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">정격 전원</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">소음 수준</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">치수 (W×D×H)</th><td class="pending-value">사양 확정 예정</td></tr>
-          <tr><th scope="row">중량</th><td class="pending-value">사양 확정 예정</td></tr>
-        </tbody>
-      </table>
-      <!-- PLACEHOLDER: 위 td.pending-value 셀에 실제 수치를 입력하면 자동으로 일반 값처럼 표시됩니다. -->
-    </div>
-  </section>
-
-  <!-- ============ WORKFLOW ============ -->
-  <section id="workflow" class="workflow" aria-labelledby="workflow-heading">
-    <div class="section-inner">
-      <h2 id="workflow-heading">줄기세포 처리 워크플로 적용</h2>
-      <p class="section-lede">일반적인 줄기세포 처리 공정에서 Rhea는 원심분리 단계를 담당합니다.</p>
-
-      <ol class="workflow-diagram" data-reveal-root>
-        <li class="workflow-step">
-          <span class="workflow-dot" aria-hidden="true"></span>
-          <h3>분리</h3>
-          <p>조직 또는 배양액에서 목표 세포군을 1차 분리합니다.</p>
+      <ol class="row-list" data-reveal-root>
+        <li class="row">
+          <span class="row-index mono">STEP 01</span>
+          <div><h3>분리</h3><p>조직 또는 배양액에서 목표 세포군을 1차 분리합니다.</p></div>
         </li>
-        <li class="workflow-step">
-          <span class="workflow-dot" aria-hidden="true"></span>
-          <h3>세척</h3>
-          <p>잔여 시약과 불순물을 제거하기 위한 세척 공정을 거칩니다.</p>
+        <li class="row">
+          <span class="row-index mono">STEP 02</span>
+          <div><h3>세척</h3><p>잔여 시약과 불순물을 제거하기 위한 세척 공정을 거칩니다.</p></div>
         </li>
-        <li class="workflow-step workflow-step-active">
-          <span class="workflow-dot" aria-hidden="true"></span>
-          <h3>원심분리 <span class="workflow-tag">Rhea</span></h3>
-          <p>Rhea가 정밀 속도 제어를 통해 세포를 농축·분획합니다.</p>
+        <li class="row row-active">
+          <span class="row-index mono">STEP 03</span>
+          <div><h3>원심분리 <span class="status-badge">Rhea</span></h3><p>정밀 속도 제어를 통해 세포를 농축·분획합니다.</p></div>
         </li>
-        <li class="workflow-step">
-          <span class="workflow-dot" aria-hidden="true"></span>
-          <h3>동결보존 준비</h3>
-          <p>후속 보관 또는 다음 공정 단계로 전달하기 위해 준비합니다.</p>
+        <li class="row">
+          <span class="row-index mono">STEP 04</span>
+          <div><h3>동결보존 준비</h3><p>후속 보관 또는 다음 공정 단계로 전달하기 위해 준비합니다.</p></div>
         </li>
       </ol>
       <!-- PLACEHOLDER: 실제 워크플로 다이어그램(고객사 제공 자료)이 도착하면 이 섹션 내용을 교체하세요. -->
     </div>
   </section>
 
-  <!-- ============ CERTIFICATIONS ============ -->
-  <section id="certifications" class="certifications" aria-labelledby="cert-heading">
-    <div class="section-inner">
-      <h2 id="cert-heading">인증 및 규정 준수</h2>
-      <div class="cert-panel">
-        <p>
-          관련 인증 정보는 현재 확인 중이며, 공식 사양서가 발행되는 대로
-          이 섹션에 정확한 인증 항목과 문서를 업데이트할 예정입니다.
-        </p>
-        <p class="cert-note">허위 또는 미확정 인증 표기를 방지하기 위해 실제 인증서가 도착하기 전까지는 구체적인 인증명을 표시하지 않습니다.</p>
+  <!-- ============ SPECS ============ -->
+  <section id="specs" class="section" aria-labelledby="specs-heading">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">사양</p>
+        <h2 id="specs-heading">기술 사양</h2>
+        <p class="section-lede">아래 수치는 공식 사양서 발행 시 확정된 값으로 교체됩니다.</p>
       </div>
-      <!-- PLACEHOLDER: 인증서 파일(PDF)과 인증명을 받으면 위 패널을 실제 목록/배지로 교체하세요. -->
+
+      <div class="spec-panel">
+        <table class="spec-table">
+          <caption class="visually-hidden">Rhea 제품 사양</caption>
+          <tbody>
+            <tr><th scope="row">모델명</th><td>Rhea</td></tr>
+            <tr><th scope="row">최대 회전속도</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">최대 원심력 (RCF)</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">로터 옵션</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">최대 샘플 용량</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">온도 제어 범위</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">정격 전원</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">소음 수준</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">치수 (W×D×H)</th><td class="pending-value">사양 확정 예정</td></tr>
+            <tr><th scope="row">중량</th><td class="pending-value">사양 확정 예정</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- PLACEHOLDER: 위 td.pending-value 셀에 실제 수치를 입력하고 class="pending-value"를 지우세요. -->
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="contact" aria-labelledby="contact-heading">
-    <div class="section-inner contact-grid">
-      <div class="contact-intro">
-        <h2 id="contact-heading">사양서 요청 및 문의</h2>
-        <p>
-          공식 사양서(PDF)는 준비 중입니다. 아래 양식을 남겨주시면
-          사양서가 준비되는 대로 가장 먼저 전달드리겠습니다.
-        </p>
-        <p class="contact-detail">
-          이메일: <span class="pending-value">담당자 이메일 확정 예정</span><br />
-          <!-- PLACEHOLDER: 실제 연락처(이메일/전화)로 교체하세요. -->
-        </p>
+  <!-- ============ PROCUREMENT DOCUMENTS ============ -->
+  <section id="documents" class="section" aria-labelledby="documents-heading">
+    <div class="container split">
+      <div class="section-head">
+        <p class="eyebrow">구매 검토 자료</p>
+        <h2 id="documents-heading">검토에 필요한 자료를 준비하고 있습니다</h2>
+        <p class="section-lede">구매·기관 검토에 필요한 문서의 준비 현황입니다. 준비되는 대로 요청하신 분께 먼저 보내드립니다.</p>
       </div>
 
-      <form class="contact-form" id="contact-form" novalidate>
-        <!--
-          PLACEHOLDER: 이 폼은 현재 화면 동작만 구현되어 있고 실제 전송 기능은 없습니다.
-          Formspree, Google Forms 연동, 또는 자체 백엔드 중 하나를 연결해야
-          제출된 내용이 실제로 이메일/DB로 전달됩니다.
-        -->
-        <div class="form-row">
-          <label for="org">기관명 <span aria-hidden="true">*</span></label>
-          <input id="org" name="org" type="text" required autocomplete="organization" />
+      <ul class="row-list">
+        <li class="row">
+          <span class="row-index mono">01</span>
+          <div><h3>제품 사양서 (PDF)</h3><p>전체 기술 사양과 로터 구성</p></div>
+          <span class="status-badge">준비 중</span>
+        </li>
+        <li class="row">
+          <span class="row-index mono">02</span>
+          <div><h3>인증 문서</h3><p>확인된 인증 항목과 인증서 사본</p></div>
+          <span class="status-badge">확인 중</span>
+        </li>
+        <li class="row">
+          <span class="row-index mono">03</span>
+          <div><h3>성능 검증 자료</h3><p>시험 조건과 결과 데이터</p></div>
+          <span class="status-badge">준비 중</span>
+        </li>
+        <li class="row">
+          <span class="row-index mono">04</span>
+          <div><h3>견적 · 데모 문의</h3><p>기관 조건에 맞춘 견적과 시연 일정</p></div>
+          <span class="status-badge status-badge-success">문의 가능</span>
+        </li>
+      </ul>
+      <!-- PLACEHOLDER: 자료가 준비되면 상태 배지를 바꾸고, 해당 행에 다운로드 링크를 추가하세요.
+           인증명은 실제 인증서를 받기 전까지 표시하지 않습니다. -->
+    </div>
+  </section>
+
+  <!-- ============ CONTACT (cta-banner) ============ -->
+  <section id="contact" class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-copy">
+          <h2 id="contact-heading">사양서가 준비되면<br />가장 먼저 보내드립니다</h2>
+          <p>기관명과 연락처를 남겨주세요. 담당자가 확인 후 연락드립니다.</p>
+          <p class="contact-detail">
+            이메일: <span class="pending-value">담당자 이메일 확정 예정</span>
+            <!-- PLACEHOLDER: 실제 연락처(이메일/전화)로 교체하세요. -->
+          </p>
         </div>
-        <div class="form-row">
-          <label for="name">담당자명 <span aria-hidden="true">*</span></label>
-          <input id="name" name="name" type="text" required autocomplete="name" />
-        </div>
-        <div class="form-row form-row-split">
-          <div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <!--
+            PLACEHOLDER: 이 폼은 현재 화면 동작만 구현되어 있고 실제 전송 기능은 없습니다.
+            Formspree, Google Forms 연동, 또는 자체 백엔드 중 하나를 연결해야
+            제출된 내용이 실제로 이메일/DB로 전달됩니다.
+          -->
+          <div class="form-row">
+            <label for="org">기관명 <span aria-hidden="true">*</span></label>
+            <input id="org" name="org" type="text" required autocomplete="organization" />
+          </div>
+          <div class="form-row">
+            <label for="name">담당자명 <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="form-row">
             <label for="email">이메일 <span aria-hidden="true">*</span></label>
             <input id="email" name="email" type="email" required autocomplete="email" />
           </div>
-          <div>
+          <div class="form-row">
             <label for="phone">연락처</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" />
           </div>
-        </div>
-        <div class="form-row">
-          <label for="message">문의 내용</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-        </div>
-        <button class="btn btn-accent form-submit" type="submit">요청 보내기</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
+          <div class="form-row form-row-full">
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <div class="form-row-full form-actions">
+            <button class="btn btn-primary" type="submit">요청 보내기</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="section-inner footer-inner">
+  <div class="container footer-inner">
     <div>
-      <span class="wordmark wordmark-footer">RHEA</span>
+      <span class="wordmark-footer">RHEA</span>
       <p class="footer-tagline">줄기세포 공정을 위한 정밀 원심분리기</p>
     </div>
     <p class="footer-meta">
