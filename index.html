@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#010102" />
-<title>Rhea — 자가 PRP 자동 분리 시스템</title>
-<meta name="description" content="Rhea는 전혈 60ml를 자동으로 원심분리하고 센서로 PRP 층을 감지해 PRP와 PPP를 수집하는 완전 자동 폐쇄형 시스템입니다. 사양서와 도입 상담을 요청하세요." />
+<title>Rhea | 자가 PRP 자동 분리 시스템</title>
+<meta name="description" content="Rhea는 전혈 60ml를 자동으로 원심분리하고 센서로 PRP 층을 감지해 PRP와 PPP를 수집하는 완전 자동 폐쇄형 시스템입니다. 도입 상담과 사양서를 요청하세요." />
 <link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml" />
+<link rel="preload" as="image" href="assets/img/rhea-three-quarter.jpg" fetchpriority="high" />
 
 <!-- DESIGN.md "Note on Font Substitutes": Inter for Linear Display/Text,
      JetBrains Mono for Linear Mono. Hangul falls through to the documented
      system stack (-apple-system / system-ui). -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -30,10 +31,6 @@
       <svg class="wordmark-mark" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true">
         <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
         <circle cx="16" cy="16" r="3" fill="currentColor"/>
-        <line x1="16" y1="2" x2="16" y2="7.4" stroke="currentColor" stroke-width="1.8"/>
-        <line x1="16" y1="24.6" x2="16" y2="30" stroke="currentColor" stroke-width="1.8"/>
-        <line x1="2" y1="16" x2="7.4" y2="16" stroke="currentColor" stroke-width="1.8"/>
-        <line x1="24.6" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.8"/>
       </svg>
       RHEA
     </a>
@@ -45,10 +42,7 @@
       <a href="#documents">구매 자료</a>
     </nav>
 
-    <div class="header-actions">
-      <a class="btn btn-secondary" href="#contact">문의</a>
-      <a class="btn btn-primary" href="#contact">사양서 요청</a>
-    </div>
+    <a class="btn btn-primary header-cta" href="#contact">상담 요청</a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="메뉴 열기">
       <span></span><span></span><span></span>
@@ -60,193 +54,178 @@
     <a href="#process">사용 절차</a>
     <a href="#specs">사양</a>
     <a href="#documents">구매 자료</a>
-    <a class="btn btn-primary" href="#contact">사양서 요청</a>
+    <a class="btn btn-primary" href="#contact">상담 요청</a>
   </nav>
 </header>
 
 <main id="main">
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO: asymmetric split, real product photo ============ -->
   <section id="top" class="hero" aria-labelledby="hero-heading">
-    <div class="container">
+    <div class="container hero-grid">
       <div class="hero-copy">
         <span class="status-badge">Autologous Bioactive Molecules Enrich System</span>
         <h1 id="hero-heading">자가 혈액에서 PRP까지,<br />완전 자동 폐쇄형으로</h1>
-        <p class="hero-lede">
-          Rhea는 전혈 60ml를 자동으로 원심분리하고, 센서로 PRP 층을 감지해
-          PRP와 PPP를 각각 주사기에 수집하는 자가 PRP 분리 시스템입니다.
-        </p>
+        <p class="hero-lede">전혈 60ml를 넣으면 원심분리부터 PRP와 PPP 수집까지 Rhea가 자동으로 진행합니다.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">도입 상담 요청</a>
+          <a class="btn btn-primary" href="#contact">상담 요청</a>
           <a class="btn btn-secondary" href="#process">사용 절차 보기</a>
         </div>
       </div>
 
-      <!-- product-screenshot-card: the protagonist panel -->
-      <figure class="product-panel" aria-labelledby="panel-caption">
-        <div class="panel-bar">
-          <span class="mono">RHEA · PRP / PPP</span>
-          <span class="status-badge">Class II 의료기기</span>
-        </div>
-        <div class="panel-body">
-          <div class="product-photo">
-            <img src="assets/img/rhea-three-quarter.jpg" width="1800" height="1200"
-                 alt="덮개를 연 Rhea 본체. 원심분리 보울과 펌프, 수집 백이 연결되어 있다." />
-          </div>
-
-          <dl class="readout">
-            <div><dt>전혈 처리량</dt><dd>60 ml</dd></div>
-            <div><dt>PRP 수집량</dt><dd>3 ml / 6 ml</dd></div>
-            <div><dt>원심분리</dt><dd>6,500 RPM · 약 3분</dd></div>
-            <div><dt>PPP 수집량</dt><dd>10–20 ml <span class="readout-note">Hct에 따라</span></dd></div>
-          </dl>
-        </div>
-        <figcaption id="panel-caption" class="panel-caption">수치는 제조사 사용 설명서와 소개 자료 기준입니다. 공식 사양서 발행 시 최종 확정됩니다.</figcaption>
-      </figure>
+      <div class="hero-media photo-tile">
+        <img src="assets/img/rhea-three-quarter.jpg" width="1800" height="1200" fetchpriority="high"
+             alt="덮개를 연 Rhea 본체. 원심분리 보울과 펌프, 수집 백이 연결되어 있다." />
+      </div>
     </div>
   </section>
 
-  <!-- ============ FEATURES ============ -->
+  <!-- ============ FEATURES: asymmetric bento, 4 items = 4 cells ============ -->
   <section id="features" class="section" aria-labelledby="features-heading">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">특징</p>
-        <h2 id="features-heading">채혈부터 수집까지, 사람 손을 덜 타는 설계</h2>
-        <p class="section-lede">키트를 장착하고 시작을 누르면 혈액 주입, 원심분리, 수집이 자동으로 이어집니다.</p>
+        <h2 id="features-heading">사람 손을 덜 타는 설계</h2>
+        <p class="section-lede">키트를 장착하고 시작을 누르면 혈액 주입, 원심분리, 수집이 이어서 진행됩니다.</p>
       </div>
 
-      <div class="feature-grid" data-reveal-root>
-        <article class="feature-card">
-          <span class="card-index mono">01</span>
-          <h3>완전 자동 폐쇄형</h3>
-          <p>일회용 키트 안에서 원심분리부터 수집까지 닫힌 경로로 진행되어, 공정 중 오염 위험을 줄이도록 설계되었습니다.</p>
+      <div class="bento" data-reveal-root>
+        <article class="bento-cell bento-feature">
+          <div class="photo-tile">
+            <img src="assets/img/rhea-front.jpg" width="1200" height="800" loading="lazy"
+                 alt="정면에서 본 Rhea 본체. 투명 덮개 아래 원심분리부와 오른쪽 펌프부가 보인다." />
+          </div>
+          <div class="bento-text">
+            <h3>완전 자동 폐쇄형</h3>
+            <p>일회용 키트 안에서 원심분리부터 수집까지 닫힌 경로로 진행되어, 공정 중 오염 위험을 줄이도록 설계되었습니다.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="card-index mono">02</span>
+        <article class="bento-cell">
           <h3>광학 센서 감지</h3>
-          <p>원심분리가 끝나면 센서가 목표 층인 PRP를 감지하고, 펌프가 PRP와 PPP를 각각의 주사기에 나눠 수집합니다.</p>
+          <p>원심분리가 끝나면 센서가 PRP 층을 감지하고, 펌프가 PRP와 PPP를 각각의 주사기에 나눠 담습니다.</p>
         </article>
-        <article class="feature-card">
-          <span class="card-index mono">03</span>
+        <article class="bento-cell">
           <h3>혈구 보호 보울</h3>
-          <p>Latham 보울 방식을 적용해 원심분리 중 혈구끼리의 간섭과 손상을 줄이도록 설계되었습니다.</p>
+          <p>Latham 보울 방식으로 원심분리 중 혈구끼리의 간섭과 손상을 줄이도록 설계되었습니다.</p>
         </article>
-        <article class="feature-card">
-          <span class="card-index mono">04</span>
+        <article class="bento-cell bento-lifted">
           <h3>터치스크린 조작</h3>
-          <p>프로토콜 선택과 키트 장착을 화면 안내에 따라 진행합니다. 준비 시간은 약 5분입니다.</p>
+          <p>프로토콜 선택과 키트 장착을 화면 안내에 따라 진행합니다. 준비에는 약 5분이 걸립니다.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ PROCESS (changelog-row list) ============ -->
+  <!-- ============ PROCESS: two grouped columns (manual / automatic) ============ -->
   <section id="process" class="section" aria-labelledby="process-heading">
-    <div class="container split">
+    <div class="container">
       <div class="section-head">
-        <p class="eyebrow">사용 절차</p>
         <h2 id="process-heading">여섯 단계, 그중 세 단계는 자동</h2>
-        <p class="section-lede">사용 설명서의 절차입니다. 혈액 주입부터 PRP·PPP 수집까지는 장비가 자동으로 진행합니다.</p>
+        <p class="section-lede">사용 설명서의 절차입니다. 시작을 누른 뒤부터는 장비가 진행합니다.</p>
       </div>
 
-      <ol class="row-list" data-reveal-root>
-        <li class="row">
-          <span class="row-index mono">STEP 01</span>
-          <div><h3>채혈</h3><p>환자에게서 전혈 60ml를 채취해 항응고제가 든 혈액백이나 주사기에 담습니다.</p></div>
-        </li>
-        <li class="row">
-          <span class="row-index mono">STEP 02</span>
-          <div><h3>프로토콜 선택</h3><p>프로토콜 A는 PRP 3ml, 프로토콜 B는 PRP 6ml를 추출합니다.</p></div>
-        </li>
-        <li class="row">
-          <span class="row-index mono">STEP 03</span>
-          <div><h3>키트 장착</h3><p>화면 안내에 따라 일회용 키트, 주사기, 혈액백을 장착합니다.</p></div>
-        </li>
-        <li class="row row-active">
-          <span class="row-index mono">STEP 04</span>
-          <div><h3>혈액 주입</h3><p>시작을 누르면 혈액 펌프가 혈액을 원심분리 보울로 보냅니다.</p></div>
-          <span class="status-badge">자동</span>
-        </li>
-        <li class="row row-active">
-          <span class="row-index mono">STEP 05</span>
-          <div><h3>원심분리</h3><p>6,500 RPM으로 약 3분간 원심분리합니다.</p></div>
-          <span class="status-badge">자동</span>
-        </li>
-        <li class="row row-active">
-          <span class="row-index mono">STEP 06</span>
-          <div><h3>PRP · PPP 수집</h3><p>센서가 PRP 층을 감지하면 펌프가 PRP와 PPP를 두 개의 주사기에 각각 수집합니다.</p></div>
-          <span class="status-badge">자동</span>
-        </li>
-      </ol>
-    </div>
-  </section>
+      <div class="process-groups" data-reveal-root>
+        <div class="process-group">
+          <h3 class="group-title">사용자가 준비합니다</h3>
+          <ol class="steps">
+            <li class="step">
+              <h4>채혈</h4>
+              <p>전혈 60ml를 항응고제가 든 혈액백이나 주사기에 담습니다.</p>
+            </li>
+            <li class="step">
+              <h4>프로토콜 선택</h4>
+              <p>프로토콜 A는 PRP 3ml, 프로토콜 B는 PRP 6ml를 추출합니다.</p>
+            </li>
+            <li class="step">
+              <h4>키트 장착</h4>
+              <p>화면 안내에 따라 일회용 키트, 주사기, 혈액백을 장착합니다.</p>
+            </li>
+          </ol>
+        </div>
 
-  <!-- ============ SPECS ============ -->
-  <section id="specs" class="section" aria-labelledby="specs-heading">
-    <div class="container split">
-      <div class="section-head">
-        <p class="eyebrow">사양</p>
-        <h2 id="specs-heading">기술 사양</h2>
-        <p class="section-lede">제조사 사용 설명서와 소개 자료 기준입니다. 비어 있는 항목은 공식 사양서 발행 시 채워집니다.</p>
-        <div class="product-photo product-photo-small">
-          <img src="assets/img/rhea-front.jpg" width="1200" height="800" loading="lazy"
-               alt="정면에서 본 Rhea 본체. 투명 덮개 아래 원심분리부와 오른쪽 펌프부가 보인다." />
+        <div class="process-group process-group-auto">
+          <h3 class="group-title">Rhea가 자동으로 진행합니다</h3>
+          <ol class="steps" start="4">
+            <li class="step">
+              <h4>혈액 주입</h4>
+              <p>혈액 펌프가 혈액을 원심분리 보울로 보냅니다.</p>
+            </li>
+            <li class="step">
+              <h4>원심분리</h4>
+              <p>6,500 RPM으로 약 3분간 원심분리합니다.</p>
+            </li>
+            <li class="step">
+              <h4>PRP와 PPP 수집</h4>
+              <p>센서가 PRP 층을 감지하면 펌프가 두 개의 주사기에 나눠 수집합니다.</p>
+            </li>
+          </ol>
         </div>
       </div>
-
-      <div class="spec-panel">
-        <table class="spec-table">
-          <caption class="visually-hidden">Rhea 제품 사양</caption>
-          <tbody>
-            <tr><th scope="row">제품명</th><td>Rhea<br /><span class="spec-sub">Autologous Bioactive Molecules Enrich System</span></td></tr>
-            <tr><th scope="row">전혈 처리량</th><td>60 ml</td></tr>
-            <tr><th scope="row">PRP 수집량</th><td>3 ml (프로토콜 A) / 6 ml (프로토콜 B)</td></tr>
-            <tr><th scope="row">PPP 수집량</th><td>10–20 ml (Hct에 따라)</td></tr>
-            <tr><th scope="row">원심분리 속도</th><td>6,500 RPM</td></tr>
-            <tr><th scope="row">원심분리 시간</th><td>약 3분</td></tr>
-            <tr><th scope="row">준비 시간</th><td>약 5분</td></tr>
-            <tr><th scope="row">방식</th><td>완전 자동 · 폐쇄형 · 일회용 키트</td></tr>
-            <tr><th scope="row">조작</th><td>터치스크린</td></tr>
-            <tr><th scope="row">의료기기 등급</th><td>Class II <span class="spec-sub">(제조사 소개 자료 기준)</span></td></tr>
-            <tr><th scope="row">정격 전원</th><td class="pending-value">사양 확정 예정</td></tr>
-            <tr><th scope="row">치수 (W×D×H)</th><td class="pending-value">사양 확정 예정</td></tr>
-            <tr><th scope="row">중량</th><td class="pending-value">사양 확정 예정</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- PLACEHOLDER: td.pending-value 셀에 실제 수치를 입력하고 class="pending-value"를 지우세요. -->
     </div>
   </section>
 
-  <!-- ============ PROCUREMENT DOCUMENTS ============ -->
-  <section id="documents" class="section" aria-labelledby="documents-heading">
-    <div class="container split">
+  <!-- ============ SPECS: featured stats + grouped rest ============ -->
+  <section id="specs" class="section" aria-labelledby="specs-heading">
+    <div class="container">
       <div class="section-head">
-        <p class="eyebrow">구매 검토 자료</p>
-        <h2 id="documents-heading">도입 검토에 필요한 자료</h2>
-        <p class="section-lede">의료기관 도입 검토에 필요한 문서의 준비 현황입니다. 준비되는 대로 요청하신 분께 먼저 보내드립니다.</p>
+        <h2 id="specs-heading">기술 사양</h2>
+        <p class="section-lede">제조사 사용 설명서와 소개 자료 기준입니다. 공식 사양서 발행 시 최종 확정됩니다.</p>
       </div>
 
-      <ul class="row-list">
-        <li class="row">
-          <span class="row-index mono">01</span>
+      <dl class="stat-strip">
+        <div class="stat"><dt>전혈 처리량</dt><dd><span class="stat-value">60</span> <span class="stat-unit">ml</span></dd></div>
+        <div class="stat"><dt>PRP 수집량</dt><dd><span class="stat-value">3 / 6</span> <span class="stat-unit">ml</span></dd></div>
+        <div class="stat"><dt>원심분리 속도</dt><dd><span class="stat-value">6,500</span> <span class="stat-unit">RPM</span></dd></div>
+        <div class="stat"><dt>원심분리 시간</dt><dd><span class="stat-value">약 3</span> <span class="stat-unit">분</span></dd></div>
+      </dl>
+
+      <div class="spec-groups">
+        <div class="spec-group">
+          <h3>운용</h3>
+          <dl>
+            <div><dt>방식</dt><dd>완전 자동, 폐쇄형, 일회용 키트</dd></div>
+            <div><dt>조작</dt><dd>터치스크린</dd></div>
+            <div><dt>준비 시간</dt><dd>약 5분</dd></div>
+            <div><dt>PPP 수집량</dt><dd>10-20 ml (Hct에 따라)</dd></div>
+          </dl>
+        </div>
+        <div class="spec-group">
+          <h3>장비 정보</h3>
+          <dl>
+            <div><dt>의료기기 등급</dt><dd>Class II (제조사 소개 자료 기준)</dd></div>
+            <div><dt>정격 전원</dt><dd class="pending-value">사양 확정 예정</dd></div>
+            <div><dt>치수 (W×D×H)</dt><dd class="pending-value">사양 확정 예정</dd></div>
+            <div><dt>중량</dt><dd class="pending-value">사양 확정 예정</dd></div>
+          </dl>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: dd.pending-value에 실제 수치를 입력하고 class="pending-value"를 지우세요. -->
+    </div>
+  </section>
+
+  <!-- ============ PROCUREMENT DOCUMENTS: status rows ============ -->
+  <section id="documents" class="section" aria-labelledby="documents-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="documents-heading">도입 검토에 필요한 자료</h2>
+        <p class="section-lede">준비되는 대로 상담을 요청하신 기관에 먼저 보내드립니다.</p>
+      </div>
+
+      <ul class="doc-list">
+        <li class="doc">
           <div><h3>제품 사양서 (PDF)</h3><p>전체 기술 사양과 일회용 키트 구성</p></div>
           <span class="status-badge">준비 중</span>
         </li>
-        <li class="row">
-          <span class="row-index mono">02</span>
+        <li class="doc">
           <div><h3>인허가 문서</h3><p>국내 의료기기 허가 사항과 인증서 사본</p></div>
           <span class="status-badge">확인 중</span>
         </li>
-        <li class="row">
-          <span class="row-index mono">03</span>
+        <li class="doc">
           <div><h3>사용 설명서</h3><p>프로토콜별 사용 절차와 주의 사항</p></div>
           <span class="status-badge">준비 중</span>
         </li>
-        <li class="row">
-          <span class="row-index mono">04</span>
-          <div><h3>견적 · 데모 문의</h3><p>기관 조건에 맞춘 견적과 시연 일정</p></div>
-          <span class="status-badge status-badge-success">문의 가능</span>
+        <li class="doc">
+          <div><h3>견적과 시연</h3><p>기관 조건에 맞춘 견적과 시연 일정</p></div>
+          <span class="status-badge status-badge-success">지금 가능</span>
         </li>
       </ul>
       <!-- PLACEHOLDER: 자료가 준비되면 상태 배지를 바꾸고 해당 행에 다운로드 링크를 추가하세요.
@@ -260,7 +239,7 @@
       <div class="cta-banner">
         <div class="cta-copy">
           <h2 id="contact-heading">도입 상담과<br />사양서를 요청하세요</h2>
-          <p>기관명과 연락처를 남겨주시면 담당자가 확인 후 연락드립니다. 사양서가 준비되면 가장 먼저 보내드립니다.</p>
+          <p>기관명과 연락처를 남겨주시면 담당자가 확인 후 연락드립니다.</p>
           <p class="contact-detail">
             이메일: <span class="pending-value">담당자 이메일 확정 예정</span>
             <!-- PLACEHOLDER: 실제 연락처(이메일/전화)로 교체하세요. -->
@@ -275,15 +254,18 @@
           -->
           <div class="form-row">
             <label for="org">기관명 <span aria-hidden="true">*</span></label>
-            <input id="org" name="org" type="text" required autocomplete="organization" />
+            <input id="org" name="org" type="text" required autocomplete="organization" aria-describedby="org-error" />
+            <p class="field-error" id="org-error">기관명을 입력해 주세요.</p>
           </div>
           <div class="form-row">
             <label for="name">담당자명 <span aria-hidden="true">*</span></label>
-            <input id="name" name="name" type="text" required autocomplete="name" />
+            <input id="name" name="name" type="text" required autocomplete="name" aria-describedby="name-error" />
+            <p class="field-error" id="name-error">담당자명을 입력해 주세요.</p>
           </div>
           <div class="form-row">
             <label for="email">이메일 <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" required autocomplete="email" />
+            <input id="email" name="email" type="email" required autocomplete="email" aria-describedby="email-error" />
+            <p class="field-error" id="email-error">올바른 이메일 주소를 입력해 주세요.</p>
           </div>
           <div class="form-row">
             <label for="phone">연락처</label>
