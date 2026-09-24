@@ -359,16 +359,15 @@ h3 {
 @media (min-width: 1024px) {
   .panel-body { grid-template-columns: 1fr 1fr; gap: var(--spacing-xxl); padding: var(--spacing-xxl) var(--spacing-xl); }
 }
-.rotor-diagram { width: 100%; max-width: 420px; margin: 0 auto; }
-.rotor-baseplate { fill: var(--color-surface-2); stroke: var(--color-hairline-strong); stroke-width: 1; }
-.dim-circle { fill: none; stroke: var(--color-hairline-tertiary); stroke-width: 1; stroke-dasharray: 2 4; }
-.rotor-ring { fill: none; stroke: var(--color-ink-muted); stroke-width: 1.2; }
-.rotor-ring-inner { stroke: var(--color-ink-subtle); }
-.rotor-slots circle { fill: var(--color-surface-3); stroke: var(--color-ink-muted); stroke-width: 1.1; }
-.rotor-hub { fill: var(--color-ink); }
-.dim-line line { stroke: var(--color-ink-subtle); stroke-width: 1; }
-.rotor-spin { transform-origin: 210px 210px; animation: rotor-rotate 22s linear infinite; }
-@keyframes rotor-rotate { to { transform: rotate(360deg); } }
+/* Product photography is shot on white; it sits on the documented
+   inverse-canvas so the white ground reads as a deliberate tile. */
+.product-photo {
+  overflow: hidden;
+  background: var(--color-inverse-canvas);
+  border-radius: var(--rounded-lg);
+}
+.product-photo img { width: 100%; height: auto; }
+.product-photo-small { margin-top: var(--spacing-xl); max-width: 480px; }
 
 .readout { border-top: 1px solid var(--color-hairline); }
 .readout > div {
@@ -379,8 +378,9 @@ h3 {
   padding: var(--spacing-md) 0;
   border-bottom: 1px solid var(--color-hairline);
 }
-.readout dt { font-size: 14px; color: var(--color-ink-muted); }
-.readout dd { font-size: 14px; }
+.readout dt { font-size: 14px; color: var(--color-ink-subtle); }
+.readout dd { font-size: 16px; font-weight: 500; color: var(--color-ink); text-align: right; }
+.readout-note { display: block; font-size: 12px; font-weight: 400; color: var(--color-ink-subtle); }
 
 /* caption */
 .panel-caption {
@@ -463,6 +463,7 @@ h3 {
 .spec-table th { width: 40%; color: var(--color-ink-subtle); }
 .spec-table td { color: var(--color-ink); }
 .spec-table td.pending-value { color: var(--color-ink-subtle); }
+.spec-sub { font-size: 12px; line-height: 1.4; color: var(--color-ink-subtle); }
 .spec-table tr:hover { background: var(--color-surface-2); }
 @media (max-width: 639px) {
   .spec-table th, .spec-table td { padding: var(--spacing-sm) var(--spacing-md); }
@@ -556,7 +557,6 @@ textarea { resize: vertical; min-height: 96px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rotor-spin { animation: none; }
   [data-reveal-root].js-reveal .feature-card,
   [data-reveal-root].js-reveal .row { opacity: 1; transform: none; transition: none; }
 }

@@ -12,23 +12,23 @@ static HTML/CSS/JS (user choice; no build tooling)
 
 ## Users
 
-Primary audience: procurement / institutional decision-makers (구매·기관 담당자) at labs, hospitals, biotech and pharma organizations evaluating lab equipment purchases. They are comparing vendors and screening for trust signals, certifications, specs, and support — not casual browsers. Secondary audience (not primary, but should not be alienated): researchers/lab technicians who will operate the device day to day and may influence the purchase decision.
+Primary audience: procurement / institutional decision-makers (구매·기관 담당자) at medical institutions (clinics and hospitals using autologous PRP) evaluating equipment purchases. They are comparing vendors and screening for trust signals, certifications, specs, and support — not casual browsers. Secondary audience (not primary, but should not be alienated): physicians and clinical staff who will operate the device day to day and may influence the purchase decision.
 
 ## Product Purpose
 
-Rhea is a centrifuge device built for stem-cell processing/research workflows. The website's job is to inform and persuade institutional buyers during procurement evaluation — establishing credibility, communicating specs/certifications, and supporting a purchase decision or inquiry.
+Rhea (device label: "Autologous Bioactive Molecules Enrich System") is a fully automated, closed-system device that centrifuges a patient's whole blood and collects PRP (platelet-rich plasma) and PPP (platelet-poor plasma) into separate syringes. It is not a stem-cell centrifuge — an earlier assumption corrected on 2026-09-24 from the user's Google Drive material. The website's job is to inform and persuade institutional buyers during procurement evaluation — establishing credibility, communicating specs/certifications, and supporting a purchase decision or inquiry.
 
 ## Positioning
 
-Not yet confirmed. Real differentiating claims (precision, capacity, certifications, workflow fit) depend on the spec sheet/data the user is sending. Do not invent a competitive claim before that arrives — record as an open decision.
+Device-fact positioning only: automated, closed, sensor-controlled PRP/PPP separation from 60 ml of whole blood. Efficacy and competitor-comparison claims (concentration multiples, growth-factor fold changes, clinical cases, indications) exist in the manufacturer deck but are held back: Korean medical-device advertising requires prior review, and that deck is branded "Phoenix" — its relation to Rhea is unconfirmed. Open decision for the user.
 
 ## Operating Context
 
-Lab and clinical research settings performing stem-cell centrifugation. Procurement in this space typically involves compliance/certification checks (e.g., CE, ISO, GMP) and technical spec comparison against competing equipment — but which certifications Rhea actually holds is unconfirmed pending the user's files.
+Clinical settings preparing autologous PRP at the point of care. Procurement involves regulatory checks (domestic medical-device approval) and spec comparison against other PRP systems — Rhea's domestic approval status is unconfirmed; the manufacturer deck states Class II.
 
 ## Capabilities and Constraints
 
-Actual technical specs (speed, capacity, rotor types, safety features, certifications) are unknown as of this writing. The user stated real spec sheets, photos, certificates, and paper/data will be shared soon but were not provided in this session. **Do not fabricate specs, certifications, test data, or claims** — placeholder/illustrative content must be clearly structured so it can be swapped for real data without a redesign.
+Confirmed from source material: whole blood 60 ml; Protocol A PRP 3 ml / Protocol B PRP 6 ml; PPP 10–20 ml (by Hct); centrifugation 6,500 RPM for about 3 min; about 5 min preparation; fully automated closed system with disposable kit; optical sensor detects the PRP layer; Latham-bowl design; touchscreen; Class II (manufacturer deck). Still unknown: power rating, dimensions, weight, domestic approval, certificates. **Do not fabricate specs, certifications, test data, or claims** — placeholder/illustrative content must be clearly structured so it can be swapped for real data without a redesign.
 
 ## Brand Commitments
 
@@ -36,7 +36,7 @@ Logo, color palette, and typography are said to be already decided and "coming s
 
 ## Evidence on Hand
 
-None on hand in this session. Pending from the user: product spec sheet, product photography, certification documents, supporting paper/data, logo, brand color palette, and typography. All content built before these arrive is placeholder and must be labeled/structured for easy replacement — no invented testimonials, certifications, benchmarks, or customer names.
+From the user's Google Drive (2026-09-24): two product photos ("Rhea Picture" folder → assets/img/), the operating-procedure translation sheet ("의료 기기 매뉴얼 텍스트화 및 번역"), and the manufacturer deck "Phoenix introduction_2023.pptx". Still pending: official spec sheet, approval/certification documents, logo file, brand palette and typography. All content built before these arrive is placeholder and must be labeled/structured for easy replacement — no invented testimonials, certifications, benchmarks, or customer names.
 
 ## Product Principles
 
