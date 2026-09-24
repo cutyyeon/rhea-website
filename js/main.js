@@ -69,11 +69,38 @@
   var form = document.getElementById("contact-form");
   if (form) {
     var status = form.querySelector(".form-status");
+    var fields = form.querySelectorAll("input, textarea");
+    var isDirty = false;
+
+    // Keep aria-invalid in step with each field's validity once it is touched,
+    // so screen readers announce the inline error the CSS shows.
+    fields.forEach(function (field) {
+      field.addEventListener("input", function () {
+        isDirty = true;
+        if (field.hasAttribute("aria-invalid")) {
+          field.setAttribute("aria-invalid", String(!field.checkValidity()));
+        }
+      });
+    });
+
+    // Warn before leaving the page with an unsent request.
+    window.addEventListener("beforeunload", function (event) {
+      if (!isDirty) return;
+      event.preventDefault();
+      event.returnValue = "";
+    });
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!form.checkValidity()) {
+        // Inline errors (CSS) replace the browser's own bubbles: mark every
+        // field, then move focus to the first invalid one.
         form.classList.add("was-validated");
-        form.reportValidity();
+        fields.forEach(function (field) {
+          field.setAttribute("aria-invalid", String(!field.checkValidity()));
+        });
+        var firstInvalid = form.querySelector(":invalid");
+        if (firstInvalid) firstInvalid.focus();
         return;
       }
 
@@ -86,6 +113,9 @@
         status.setAttribute("data-state", "success");
       }
       form.reset();
+      form.classList.remove("was-validated");
+      fields.forEach(function (field) { field.removeAttribute("aria-invalid"); });
+      isDirty = false;
     });
   }
 })();
