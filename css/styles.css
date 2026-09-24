@@ -424,6 +424,82 @@ h4 {
 .shared-list li { padding-top: var(--spacing-lg); border-top: 1px solid var(--color-hairline-strong); }
 .shared-list p { margin-top: var(--spacing-xs); font-size: 14px; color: var(--color-ink-subtle); max-width: 30em; }
 
+/* --- Logo --- */
+.wordmark img { display: block; height: 24px; width: auto; }
+.footer-logo { display: block; height: 32px; width: auto; }
+.text-link { color: var(--color-ink); text-decoration: underline; text-underline-offset: 3px; }
+.text-link:hover { color: var(--color-primary-hover); }
+
+/* --- Principle: patented Latham bowl + buffy coat (catalog diagrams) --- */
+.principle-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-sm); }
+@media (min-width: 1024px) { .principle-grid { grid-template-columns: 5fr 6fr; } }
+.principle-card {
+  margin: 0;
+  display: flex; flex-direction: column; gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--edge-highlight);
+}
+/* catalog art keeps its own ground; the tile only rounds and frames it */
+.principle-art { overflow: hidden; border-radius: var(--rounded-md); background: var(--color-inverse-canvas); }
+.principle-art img { width: 100%; height: auto; }
+.principle-art-pair { display: grid; grid-template-columns: 4fr 3fr; gap: 2px; background: var(--color-hairline); }
+.principle-art-pair img { height: 100%; object-fit: cover; }
+.principle-card h3 { margin-bottom: var(--spacing-xs); }
+.principle-card figcaption > p:not(.footnote) { font-size: 14px; color: var(--color-ink-subtle); max-width: 40em; }
+.layer-legend { display: grid; margin-top: var(--spacing-lg); }
+.layer-legend > div {
+  display: flex; justify-content: space-between; align-items: baseline; gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0; border-top: 1px solid var(--color-hairline);
+}
+.layer-legend dt { font-size: 14px; color: var(--color-ink-subtle); }
+.layer-legend dd { font-size: 22px; font-weight: 500; letter-spacing: -0.4px; font-variant-numeric: tabular-nums; } /* card-title */
+
+/* --- Shared block titles inside the product tabs --- */
+.block-title { margin: var(--spacing-xxl) 0 var(--spacing-lg); font-size: 22px; font-weight: 500; letter-spacing: -0.4px; } /* card-title */
+.block-sub { margin-left: var(--spacing-xs); font-size: 13px; font-weight: 500; letter-spacing: 0.4px; color: var(--color-ink-subtle); } /* eyebrow */
+
+/* Rhea: core competency rows */
+.core-list { display: grid; margin-top: var(--spacing-xxl); border-top: 1px solid var(--color-hairline); }
+.core-list li {
+  display: grid; grid-template-columns: 1fr; gap: var(--spacing-xxs);
+  padding: var(--spacing-md) 0; border-bottom: 1px solid var(--color-hairline);
+}
+@media (min-width: 768px) { .core-list li { grid-template-columns: 2fr 3fr; gap: var(--spacing-lg); align-items: baseline; } }
+.core-en { font-size: 20px; line-height: 1.4; letter-spacing: -0.2px; color: var(--color-ink); } /* subhead */
+.core-list li > span:last-child { font-size: 14px; color: var(--color-ink-subtle); }
+
+/* Rhea: application areas, 2x2 */
+.apps-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-sm); }
+@media (min-width: 640px) { .apps-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .apps-grid { grid-template-columns: repeat(4, 1fr); } }
+.app-card { padding: var(--spacing-lg); background: var(--color-surface-1); border: 1px solid var(--color-hairline); border-radius: var(--rounded-lg); }
+.app-en { font-size: 13px; font-weight: 500; letter-spacing: 0.4px; color: var(--color-ink-subtle); } /* eyebrow */
+.app-card h5 { margin: var(--spacing-xs) 0 var(--spacing-md); font-size: 20px; font-weight: 400; line-height: 1.4; letter-spacing: -0.2px; } /* subhead */
+.app-card ul { display: grid; gap: var(--spacing-xs); }
+.app-card li { position: relative; padding-left: var(--spacing-md); font-size: 14px; color: var(--color-ink-muted); }
+.app-card li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 1px; background: var(--color-ink-subtle); }
+
+/* Phoenix: four catalog features, 2x2 */
+.quad { display: grid; grid-template-columns: 1fr; gap: var(--spacing-sm); }
+@media (min-width: 640px) { .quad { grid-template-columns: 1fr 1fr; } }
+.quad-card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--spacing-xs); padding: var(--spacing-lg); background: var(--color-surface-1); border: 1px solid var(--color-hairline); border-radius: var(--rounded-lg); }
+.quad-card h5 { margin: var(--spacing-xs) 0 0; font-size: 22px; font-weight: 500; line-height: 1.25; letter-spacing: -0.4px; } /* card-title */
+.quad-num { font-size: 28px; font-weight: 600; letter-spacing: -0.6px; font-variant-numeric: tabular-nums; } /* headline */
+.quad-card p { font-size: 14px; color: var(--color-ink-subtle); }
+
+/* Phoenix: DEPA performance */
+.depa { width: 100%; border-collapse: collapse; text-align: center; }
+.depa th { padding: var(--spacing-sm); font-size: 14px; font-weight: 400; color: var(--color-ink-subtle); border-bottom: 1px solid var(--color-hairline-strong); }
+.depa td { padding: var(--spacing-md) var(--spacing-sm); font-size: 22px; font-weight: 500; letter-spacing: -0.4px; } /* card-title */
+.depa th + th, .depa td + td { border-left: 1px solid var(--color-hairline); }
+
+/* Phoenix: step illustrations from the catalog */
+.step-art { display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; margin-bottom: var(--spacing-md); overflow: hidden; border-radius: var(--rounded-md); background: var(--color-inverse-canvas); }
+.step-art img { width: 80%; height: 80%; object-fit: contain; }
+
 /* --- Compare: two products side by side, number rows (Miracell) --- */
 .compare { display: grid; grid-template-columns: 1fr; gap: var(--spacing-sm); }
 @media (min-width: 768px) { .compare { grid-template-columns: 1fr 1fr; } }
@@ -488,7 +564,6 @@ h4 {
 .circuit-step { font-size: 14px; color: var(--color-ink-subtle); }
 .circuit-value { font-size: 20px; line-height: 1.4; letter-spacing: -0.2px; color: var(--color-ink); font-variant-numeric: tabular-nums; } /* subhead */
 
-.steps-title { margin-top: var(--spacing-xxl); font-size: 22px; font-weight: 500; letter-spacing: -0.4px; } /* card-title */
 .step-row { display: grid; grid-template-columns: 1fr; gap: var(--spacing-sm); margin-top: var(--spacing-lg); }
 @media (min-width: 640px) { .step-row { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .step-row { grid-template-columns: repeat(3, 1fr); } }
