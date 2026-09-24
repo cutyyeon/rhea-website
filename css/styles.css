@@ -1,65 +1,67 @@
 /* =========================================================
    RHEA — design tokens
-   System: Linear-style dark marketing canvas (see DESIGN.md).
-   Near-black canvas, four-step surface ladder, hairline borders,
-   one lavender-blue accent used only for the brand mark, primary
-   CTA, focus ring and link emphasis. Dark only — no light theme.
+   System: Apple-style product tiles (see DESIGN.md).
+   Full-bleed sections alternate white / parchment / near-black and
+   the color change is the divider. One Action Blue carries every
+   interactive element and nothing else. No decorative borders or
+   shadows — the single product shadow sits under the rotor render.
    ========================================================= */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* color — brand */
-  --color-primary: #5e6ad2;
+  /* color — action */
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  --color-primary-on-dark: #2997ff;
   --color-on-primary: #ffffff;
-  --color-primary-hover: #828fff;
-  --color-primary-focus: #5e69d1;
 
   /* color — text */
-  --color-ink: #f7f8f8;
-  --color-ink-muted: #d0d6e0;
-  --color-ink-subtle: #8a8f98;
-  /* #62666d (DESIGN.md ink-tertiary) is ~3.4:1 on canvas — too faint for the
-     "사양 확정 예정" markers, which carry real meaning. Those use ink-subtle
-     (#8a8f98, ~6:1) instead; tertiary is kept for placeholders only. */
-  --color-ink-tertiary: #62666d;
+  --color-ink: #1d1d1f;
+  --color-ink-muted-80: #333333;
+  /* DESIGN.md's ink-muted-48 (#7a7a7a) is ~4.3:1 on white — just under AA
+     for body-size text, and it backs the "사양 확정 예정" markers that carry
+     real meaning. #6e6e73 (Apple's own secondary label gray) clears 5:1. */
+  --color-ink-secondary: #6e6e73;
+  --color-on-dark: #ffffff;
+  --color-body-muted: #cccccc;
 
-  /* color — surfaces (canvas → surface-4) */
-  --color-canvas: #010102;
-  --color-surface-1: #0f1011;
-  --color-surface-2: #141516;
-  --color-surface-3: #18191a;
-  --color-surface-4: #191a1b;
-  --color-hairline: #23252a;
-  --color-hairline-strong: #34343a;
-  --color-hairline-tertiary: #3e3e44;
+  /* color — surfaces */
+  --color-canvas: #ffffff;
+  --color-parchment: #f5f5f7;
+  --color-pearl: #fafafc;
+  --color-tile-1: #272729;
+  --color-tile-2: #2a2a2c;
+  --color-tile-3: #252527;
+  --color-black: #000000;
 
-  /* color — semantic */
-  --color-success: #27a644;
-  /* DESIGN.md documents no error color (Known Gaps); a muted red that clears
-     4.5:1 on surface-1 is the minimum the contact form needs. */
-  --color-error: #eb5757;
+  /* color — lines */
+  --color-divider-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+  --color-field-border: #d2d2d7;
+  --color-hairline-on-dark: rgba(255, 255, 255, 0.12);
 
-  /* type */
-  --font-display: "Inter", "Pretendard Variable", "Pretendard", -apple-system, "SF Pro Display", system-ui, sans-serif;
-  --font-body: "Inter", "Pretendard Variable", "Pretendard", -apple-system, system-ui, "Malgun Gothic", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* DESIGN.md surfaces no error state (Known Gaps); Apple's system red. */
+  --color-error: #e30000;
+  --color-success: #248a3d;
+
+  /* type — system-ui resolves to SF Pro (and Apple SD Gothic Neo for
+     Hangul) on Apple devices; Pretendard covers Hangul elsewhere. */
+  --font-sans: -apple-system, BlinkMacSystemFont, system-ui, "Pretendard Variable", "Pretendard", "Segoe UI", "Malgun Gothic", sans-serif;
 
   /* shape */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 8px;   /* buttons, inputs */
-  --radius-lg: 12px;  /* cards */
-  --radius-xl: 16px;  /* product/diagram panels */
-  --radius-pill: 9999px; /* status badges only — never CTAs */
+  --radius-sm: 8px;    /* compact utility */
+  --radius-md: 11px;   /* pearl capsule, form fields */
+  --radius-lg: 18px;   /* utility cards */
+  --radius-pill: 9999px; /* every action */
+
+  /* the one shadow in the system — product renders only */
+  --shadow-product: 3px 5px 30px rgba(0, 0, 0, 0.22);
 
   /* layout */
-  --measure: 68ch;
-  --container: 1200px;
-  --gutter: clamp(1rem, 4vw, 2rem);
-  --section: clamp(4rem, 9vw, 6rem); /* 96px at desktop */
-
-  /* the faint white top-edge highlight on lifted panels */
-  --edge-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --container: 1068px;
+  --container-text: 980px;
+  --gutter: clamp(1rem, 4vw, 1.5rem);
+  --section: clamp(3rem, 8vw, 5rem); /* 80px desktop → 48px small phone */
 
   /* motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -76,9 +78,10 @@ body {
   margin: 0;
   background: var(--color-canvas);
   color: var(--color-ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: 17px;          /* Apple runs body at 17px, not 16px */
+  line-height: 1.47;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-break: keep-all; /* Hangul wraps at word boundaries, not mid-word */
@@ -91,19 +94,11 @@ h1, h2, h3, p, figure { margin: 0; }
 button { font: inherit; color: inherit; }
 input, textarea, select { font: inherit; color: inherit; }
 
-::selection { background: color-mix(in srgb, var(--color-primary) 45%, transparent); color: var(--color-ink); }
+::selection { background: color-mix(in srgb, var(--color-primary) 22%, transparent); }
 :focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--color-primary-focus) 70%, transparent);
+  outline: 2px solid var(--color-primary-focus);
   outline-offset: 2px;
 }
-::-webkit-scrollbar { width: 12px; height: 12px; }
-::-webkit-scrollbar-track { background: var(--color-canvas); }
-::-webkit-scrollbar-thumb {
-  background: var(--color-hairline-strong);
-  border-radius: var(--radius-pill);
-  border: 3px solid var(--color-canvas);
-}
-* { scrollbar-color: var(--color-hairline-strong) var(--color-canvas); scrollbar-width: thin; }
 
 .visually-hidden {
   position: absolute;
@@ -118,50 +113,40 @@ input, textarea, select { font: inherit; color: inherit; }
 .skip-link {
   position: absolute;
   left: 1rem; top: -3rem;
-  background: var(--color-surface-2);
-  color: var(--color-ink);
-  border: 1px solid var(--color-hairline-strong);
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius-md);
+  background: var(--color-canvas);
+  color: var(--color-primary);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-pill);
   transition: top var(--dur-fast) var(--ease-out);
   z-index: 100;
 }
-.skip-link:focus { top: 1rem; }
+.skip-link:focus { top: 0.5rem; }
 
 /* =========================================================
-   Type
-   Display tracking pulls negative, eased for Hangul, which
-   reads cramped sooner than Latin at the same em value.
+   Type — weights 300 / 400 / 600 / 700 only; 500 is absent
    ========================================================= */
 h1, h2, h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 600;
-  color: var(--color-ink);
+  color: inherit;
 }
 h1 {
-  font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4.5rem);
+  font-size: clamp(1.75rem, 1.1rem + 2.9vw, 3.5rem); /* 28px → 56px */
   line-height: 1.1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
 }
 h2 {
-  font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem); /* → display-md 40px */
-  line-height: 1.18;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem); /* display-lg 40px */
+  line-height: 1.12;
+  letter-spacing: -0.015em;
 }
 h3 {
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.012em;
+  font-size: 1.3125rem; /* tagline 21px */
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-p { color: var(--color-ink-subtle); max-width: var(--measure); }
-
-.section-lede {
-  font-size: 1.125rem; /* body-lg */
-  max-width: 56ch;
-  margin-top: 0.75rem;
-}
+p { color: var(--color-ink-secondary); }
 
 .section-inner {
   max-width: var(--container);
@@ -169,67 +154,78 @@ p { color: var(--color-ink-subtle); max-width: var(--measure); }
   padding: 0 var(--gutter);
 }
 
+/* Section heads sit centered atop each tile, like a product tile's name + tagline. */
+.section-inner > h2,
+.section-inner > .section-lede { text-align: center; margin-left: auto; margin-right: auto; }
+.section-lede {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.3125rem);
+  line-height: 1.38;
+  max-width: 40ch;
+  margin-top: 0.75rem;
+}
+
 .spec-table, .pending-value, .rotor-caption {
   font-variant-numeric: tabular-nums;
 }
 
 /* =========================================================
-   Buttons — 8px corners, compact 8/14 padding, 14px/500 labels
+   Buttons — the pill is the action signal; press = scale(0.95)
    ========================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 40px; /* ≥40px tap height */
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.2;
+  min-height: 44px;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out),
+  transition: transform var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out);
 }
+.btn:active { transform: scale(0.95); }
 .btn-accent {
   background: var(--color-primary);
   color: var(--color-on-primary);
 }
-.btn-accent:hover { background: var(--color-primary-hover); }
-.btn-accent:active { background: var(--color-primary-focus); }
+.btn-accent:hover { background: var(--color-primary-focus); }
 
-/* button-secondary: charcoal fill + hairline */
+/* button-secondary-pill: the ghost pill */
 .btn-ghost {
-  background: var(--color-surface-1);
-  border-color: var(--color-hairline);
-  color: var(--color-ink);
+  background: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
-.btn-ghost:hover { background: var(--color-surface-2); border-color: var(--color-hairline-strong); }
+.btn-ghost:hover { background: var(--color-primary); color: var(--color-on-primary); }
 
 .btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+  transform: none;
 }
 
 /* =========================================================
-   Header — 56px sticky canvas bar
+   Header — the slim black global nav (44px)
    ========================================================= */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--color-canvas) 82%, transparent);
-  backdrop-filter: saturate(160%) blur(12px);
-  -webkit-backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid var(--color-hairline);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  color: var(--color-on-dark);
 }
 .header-inner {
   max-width: var(--container);
   margin: 0 auto;
-  min-height: 56px;
+  min-height: 44px;
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
@@ -238,69 +234,73 @@ p { color: var(--color-ink-subtle); max-width: var(--measure); }
 .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-family: var(--font-display);
+  gap: 0.45rem;
   font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  letter-spacing: 0.06em;
   text-decoration: none;
-  color: var(--color-ink);
+  color: var(--color-on-dark);
 }
-.wordmark-mark { color: var(--color-primary); }
+.wordmark-mark { width: 18px; height: 18px; }
 
 .main-nav {
   display: none;
-  gap: 1.75rem;
+  gap: 2.25rem;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: -0.01em;
 }
 .main-nav a {
   text-decoration: none;
-  color: var(--color-ink-subtle);
+  color: rgba(255, 255, 255, 0.8);
   transition: color var(--dur-fast) var(--ease-out);
 }
-.main-nav a:hover { color: var(--color-ink); }
+.main-nav a:hover { color: var(--color-on-dark); }
 
-.header-cta { display: none; }
+/* The sub-nav "Buy" pill, scaled to the global nav. */
+.header-cta {
+  display: none;
+  min-height: 28px;
+  padding: 4px 12px;
+  font-size: 12px;
+}
 
 .nav-toggle {
   margin-left: auto;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: 0;
   cursor: pointer;
 }
 .nav-toggle span {
   display: block;
-  width: 16px; height: 1.5px;
-  background: var(--color-ink-muted);
+  width: 17px; height: 1.2px;
+  background: var(--color-on-dark);
 }
 
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  padding: 0.25rem var(--gutter) 1.25rem;
-  border-top: 1px solid var(--color-hairline);
-  background: var(--color-canvas);
+  padding: 0.5rem var(--gutter) 1.5rem;
+  background: var(--color-black);
 }
 /* :not(.btn) keeps this from overriding the CTA button's own text color. */
 .mobile-nav a:not(.btn) {
   text-decoration: none;
-  color: var(--color-ink-muted);
-  font-size: 15px;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--color-hairline);
+  color: var(--color-on-dark);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
 }
-.mobile-nav .btn { margin-top: 1rem; min-height: 44px; }
+.mobile-nav .btn { align-self: flex-start; margin-top: 1rem; }
 .mobile-nav[hidden] { display: none; }
 
-@media (min-width: 860px) {
+@media (min-width: 834px) {
   .main-nav { display: flex; }
   .header-cta { display: inline-flex; }
   .nav-toggle { display: none; }
@@ -308,73 +308,65 @@ p { color: var(--color-ink-subtle); max-width: var(--measure); }
 }
 
 /* =========================================================
-   Hero — copy left, the rotor diagram framed as a product panel
+   Hero — product-tile-light: centered name → tagline → two
+   pills → the rotor render resting on the surface
    ========================================================= */
 .hero {
-  padding: clamp(3.5rem, 9vw, 7rem) 0 var(--section);
+  background: var(--color-canvas);
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0 var(--section);
 }
 .hero-inner {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2.5rem, 6vw, 4rem);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: clamp(2.5rem, 6vw, 3.5rem);
 }
-@media (min-width: 960px) {
-  .hero-inner { grid-template-columns: 1.1fr 0.9fr; }
-}
-.hero-copy h1 { max-width: 15ch; }
+.hero-copy { display: flex; flex-direction: column; align-items: center; }
 .hero-lede {
-  margin-top: 1.5rem;
-  font-size: 1.125rem;
-  color: var(--color-ink-muted);
-  max-width: 44ch;
+  margin-top: 1rem;
+  font-size: clamp(1.1875rem, 1rem + 0.9vw, 1.75rem); /* lead 28px */
+  line-height: 1.25;
+  color: var(--color-ink);
+  max-width: 30ch;
 }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2rem;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
 }
 .hero-footnote {
-  margin-top: 2rem;
-  font-size: 13px;
-  color: var(--color-ink-subtle);
-  max-width: 42ch;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  line-height: 1.43;
+  max-width: 44ch;
 }
 
-/* product-screenshot-card: surface-1, 16px corners, 24px padding */
-.hero-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--edge-highlight);
-  padding: clamp(1.5rem, 4vw, 2.5rem) 1.5rem 1.5rem;
+.hero-figure { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+/* The one product shadow: the rotor is the "render" resting on the tile. */
+.rotor-diagram {
+  width: min(100%, 420px);
+  color: var(--color-ink);
+  filter: drop-shadow(var(--shadow-product));
 }
-.rotor-diagram { width: min(100%, 360px); color: var(--color-ink); }
 .rotor-caption {
-  align-self: stretch;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-hairline);
-  font-size: 13px;
-  color: var(--color-ink-subtle);
-  max-width: none;
+  font-size: 14px;
+  color: var(--color-ink-secondary);
 }
-.pending-value { color: var(--color-ink-subtle); }
+.pending-value { color: var(--color-ink-secondary); }
 
-.rotor-baseplate { fill: var(--color-surface-2); stroke: var(--color-hairline-strong); stroke-width: 1; }
-.dim-circle { fill: none; stroke: var(--color-hairline-tertiary); stroke-width: 1; stroke-dasharray: 2 4; }
-.rotor-ring { fill: none; stroke: var(--color-ink-muted); stroke-width: 1.2; }
-.rotor-ring-inner { stroke: var(--color-primary); }
-.rotor-slots circle { fill: var(--color-surface-3); stroke: var(--color-ink-muted); stroke-width: 1.1; }
+.rotor-baseplate { fill: var(--color-parchment); stroke: none; }
+.dim-circle { fill: none; stroke: var(--color-field-border); stroke-width: 1; stroke-dasharray: 2 4; }
+.rotor-ring { fill: var(--color-canvas); stroke: var(--color-ink); stroke-width: 1.4; }
+.rotor-ring-inner { fill: none; stroke: var(--color-ink-secondary); }
+.rotor-slots circle { fill: var(--color-parchment); stroke: var(--color-ink); stroke-width: 1.2; }
 .rotor-hub { fill: var(--color-ink); }
-.dim-line line { stroke: var(--color-ink-subtle); stroke-width: 1; }
+.dim-line line { stroke: var(--color-ink-secondary); stroke-width: 1; }
 
 .rotor-spin {
   transform-origin: 210px 210px;
@@ -388,194 +380,170 @@ p { color: var(--color-ink-subtle); max-width: var(--measure); }
 }
 
 /* =========================================================
-   Principles — feature cards (4-up → 2-up → 1-up)
+   Principles — parchment tile of white utility cards
    ========================================================= */
-.principles { padding: var(--section) 0; border-top: 1px solid var(--color-hairline); }
+.principles { background: var(--color-parchment); padding: var(--section) 0; }
 .principles h2 { margin-bottom: clamp(2rem, 5vw, 3rem); }
 
 .spine {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 20px;
   counter-reset: principle;
 }
-@media (min-width: 720px) {
+@media (min-width: 640px) {
   .spine { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1068px) {
   .spine { grid-template-columns: repeat(4, 1fr); }
 }
 .spine-line { display: none; }
 
 .spine-item {
   counter-increment: principle;
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
+  background: var(--color-canvas);
   border-radius: var(--radius-lg);
-  box-shadow: var(--edge-highlight);
-  padding: 24px;
-  transition: background-color var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out);
+  padding: 28px 24px 32px;
 }
-.spine-item:hover { background: var(--color-surface-2); border-color: var(--color-hairline-strong); }
-
-/* The old leader-line tick becomes a small numbered index. */
 .spine-tick {
   display: block;
-  margin-bottom: 2.5rem;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-ink-subtle);
+  margin-bottom: 1.75rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink-secondary);
 }
 .spine-tick::before { content: "0" counter(principle); }
-
-.spine-item h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-.spine-item p { font-size: 14px; }
+.spine-item h3 { margin-bottom: 0.6rem; }
+.spine-item p { font-size: 15px; line-height: 1.47; }
 
 /* =========================================================
-   Spec table — framed in a surface-1 panel
+   Spec table — white tile, hairline rows, centered column
    ========================================================= */
-.specs { padding: var(--section) 0; border-top: 1px solid var(--color-hairline); }
+.specs { background: var(--color-canvas); padding: var(--section) 0; }
 
 .spec-table {
-  margin-top: clamp(2rem, 4vw, 2.5rem);
+  margin: clamp(2rem, 5vw, 3rem) auto 0;
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--edge-highlight);
-  overflow: hidden;
-  font-size: 14px;
+  max-width: 760px;
+  border-collapse: collapse;
 }
+.spec-table tr { border-bottom: 1px solid var(--color-hairline); }
 .spec-table th, .spec-table td {
   text-align: left;
-  padding: 16px 24px;
-  font-weight: 400;
-  border-bottom: 1px solid var(--color-hairline);
+  padding: 18px 0;
+  vertical-align: top;
 }
-.spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: 0; }
 .spec-table th {
-  color: var(--color-ink-subtle);
   width: 40%;
-}
-.spec-table td {
+  padding-right: 1.5rem;
+  font-weight: 600;
   color: var(--color-ink);
-  font-family: var(--font-mono);
-  font-size: 13px;
 }
-.spec-table td.pending-value { font-family: var(--font-body); font-size: 14px; color: var(--color-ink-subtle); }
-.spec-table tr { transition: background-color var(--dur-fast) var(--ease-out); }
-.spec-table tr:hover { background: var(--color-surface-2); }
-
-@media (max-width: 480px) {
-  .spec-table th, .spec-table td { padding: 14px 16px; }
-}
+.spec-table td { font-weight: 400; color: var(--color-ink); }
 
 /* =========================================================
-   Workflow — step cards; Rhea's step lifts to surface-2
+   Workflow — product-tile-dark
    ========================================================= */
-.workflow { padding: var(--section) 0; border-top: 1px solid var(--color-hairline); }
+.workflow { background: var(--color-tile-1); color: var(--color-on-dark); padding: var(--section) 0; }
+.workflow p { color: var(--color-body-muted); }
 
 .workflow-diagram {
-  margin-top: clamp(2rem, 4vw, 2.5rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 20px;
   counter-reset: step;
 }
-@media (min-width: 720px) {
+@media (min-width: 640px) {
   .workflow-diagram { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1068px) {
   .workflow-diagram { grid-template-columns: repeat(4, 1fr); }
 }
 .workflow-step {
   counter-increment: step;
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
+  background: var(--color-tile-3);
+  border: 1px solid transparent;
   border-radius: var(--radius-lg);
-  box-shadow: var(--edge-highlight);
-  padding: 24px;
+  padding: 28px 24px 32px;
 }
 .workflow-step-active {
-  background: var(--color-surface-2);
-  border-color: var(--color-hairline-strong);
+  background: var(--color-canvas);
+  color: var(--color-ink);
 }
+.workflow-step-active p { color: var(--color-ink-secondary); }
 .workflow-dot {
   display: block;
-  margin-bottom: 2.5rem;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-ink-subtle);
+  margin-bottom: 1.75rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-body-muted);
 }
+.workflow-step-active .workflow-dot { color: var(--color-ink-secondary); }
 .workflow-dot::before { content: "STEP 0" counter(step); }
 .workflow-step h3 {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
-/* status-badge: lifted pill, muted ink, caption type */
 .workflow-tag {
-  font-family: var(--font-body);
-  font-weight: 500;
   font-size: 12px;
-  line-height: 1.4;
+  font-weight: 600;
+  line-height: 1.3;
   letter-spacing: 0;
-  color: var(--color-ink-muted);
-  background: var(--color-surface-4);
-  border: 1px solid var(--color-hairline-tertiary);
-  padding: 2px 8px;
+  color: var(--color-ink);
+  background: var(--color-parchment);
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
 }
-.workflow-step p { font-size: 14px; }
+.workflow-step p { font-size: 15px; }
 
 /* =========================================================
-   Certifications — cta-banner style panel
+   Certifications — dark tile, a micro-step off the one above
    ========================================================= */
-.certifications { padding: var(--section) 0; border-top: 1px solid var(--color-hairline); }
+.certifications {
+  background: var(--color-tile-3);
+  color: var(--color-on-dark);
+  padding: var(--section) 0;
+  border-top: 1px solid var(--color-hairline-on-dark);
+}
 .cert-panel {
-  margin-top: clamp(2rem, 4vw, 2.5rem);
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--edge-highlight);
-  padding: clamp(1.5rem, 5vw, 3rem);
+  margin: clamp(1.5rem, 4vw, 2rem) auto 0;
+  max-width: 40rem;
+  text-align: center;
 }
-.cert-panel p { color: var(--color-ink-subtle); }
+.cert-panel p { color: var(--color-body-muted); margin: 0 auto; }
 .cert-panel p:first-child {
-  color: var(--color-ink);
-  font-size: 1.125rem;
-  max-width: 52ch;
+  color: var(--color-on-dark);
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.3125rem);
+  line-height: 1.38;
 }
-.cert-note { margin-top: 1rem; font-size: 14px; }
+.cert-note { margin-top: 1.25rem; font-size: 14px; max-width: 46ch; }
 
 /* =========================================================
-   Contact
+   Contact — white tile; form fields in 11px capsules
    ========================================================= */
-.contact { padding: var(--section) 0; border-top: 1px solid var(--color-hairline); }
+.contact { background: var(--color-canvas); padding: var(--section) 0; }
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
 }
 @media (min-width: 900px) {
   .contact-grid { grid-template-columns: 0.9fr 1.1fr; }
 }
-.contact-intro p { margin-top: 1rem; }
+.contact-intro p { margin-top: 1rem; max-width: 40ch; }
 .contact-detail { margin-top: 1.5rem; font-size: 14px; }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-hairline);
+  background: var(--color-parchment);
   border-radius: var(--radius-lg);
-  box-shadow: var(--edge-highlight);
   padding: clamp(1.5rem, 4vw, 2rem);
 }
 .form-row { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -584,21 +552,20 @@ p { color: var(--color-ink-subtle); max-width: var(--measure); }
   .form-row-split { grid-template-columns: 1fr 1fr; }
 }
 .form-row-split > div { display: flex; flex-direction: column; gap: 0.4rem; }
-label { font-size: 13px; font-weight: 500; color: var(--color-ink-muted); }
+label { font-size: 14px; font-weight: 600; color: var(--color-ink); }
 input, textarea {
-  min-height: 44px; /* touch target */
-  border: 1px solid var(--color-hairline-strong);
+  min-height: 44px;
+  border: 1px solid var(--color-field-border);
   border-radius: var(--radius-md);
-  padding: 8px 12px;
+  padding: 10px 14px;
   background: var(--color-canvas);
-  font-size: 16px; /* 16px also avoids iOS Safari zoom-on-focus */
+  font-size: 17px;
   transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
 }
-input::placeholder, textarea::placeholder { color: var(--color-ink-tertiary); }
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--color-primary-focus);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary-focus) 50%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary-focus) 30%, transparent);
 }
 /* Never flag an untouched required field as an error. Only mark it once the
    visitor has interacted with it (:user-invalid, where supported) or after
@@ -606,32 +573,28 @@ input:focus, textarea:focus {
 input:user-invalid, textarea:user-invalid { border-color: var(--color-error); }
 .contact-form.was-validated input:invalid,
 .contact-form.was-validated textarea:invalid { border-color: var(--color-error); }
-textarea { resize: vertical; min-height: 6rem; }
+textarea { resize: vertical; min-height: 6.5rem; }
 .form-submit { margin-top: 0.5rem; align-self: flex-start; }
-.form-status { font-size: 14px; min-height: 1.2em; color: var(--color-ink-subtle); }
+.form-status { font-size: 14px; min-height: 1.2em; }
 .form-status[data-state="success"] { color: var(--color-success); }
 .form-status[data-state="error"] { color: var(--color-error); }
 
 /* =========================================================
-   Footer — canvas, subtle ink, caption type
+   Footer — parchment, dense and quiet
    ========================================================= */
-.site-footer { border-top: 1px solid var(--color-hairline); padding: 64px 0; }
+.site-footer { background: var(--color-parchment); padding: 2.5rem 0 3rem; color: var(--color-ink-muted-80); }
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-field-border);
 }
-.wordmark-footer {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 0.04em;
-  color: var(--color-ink);
-}
-.footer-tagline { margin-top: 0.4rem; font-size: 13px; }
-.footer-meta { font-size: 12px; color: var(--color-ink-subtle); }
+.wordmark-footer { font-weight: 600; font-size: 14px; letter-spacing: 0.06em; color: var(--color-ink); }
+.footer-tagline { margin-top: 0.35rem; font-size: 12px; }
+.footer-meta { font-size: 12px; color: var(--color-ink-secondary); }
 
 /* =========================================================
    Scroll-reveal (JS adds .js-reveal, then .is-visible)
@@ -642,18 +605,18 @@ textarea { resize: vertical; min-height: 6rem; }
 [data-reveal-root].js-reveal .spine-item,
 [data-reveal-root].js-reveal .workflow-step {
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out),
-              background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  transform: translateY(12px);
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
 }
 [data-reveal-root].js-reveal.is-visible .spine-item,
 [data-reveal-root].js-reveal.is-visible .workflow-step { opacity: 1; transform: none; }
-[data-reveal-root] > :nth-child(2 of .spine-item, .workflow-step) { transition-delay: 50ms; }
-[data-reveal-root] > :nth-child(3 of .spine-item, .workflow-step) { transition-delay: 100ms; }
-[data-reveal-root] > :nth-child(4 of .spine-item, .workflow-step) { transition-delay: 150ms; }
+[data-reveal-root] > :nth-child(2 of .spine-item, .workflow-step) { transition-delay: 60ms; }
+[data-reveal-root] > :nth-child(3 of .spine-item, .workflow-step) { transition-delay: 120ms; }
+[data-reveal-root] > :nth-child(4 of .spine-item, .workflow-step) { transition-delay: 180ms; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .btn:active { transform: none; }
   .spine-item, .workflow-step {
     transition: none !important;
     transform: none !important;
