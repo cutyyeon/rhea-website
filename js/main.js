@@ -42,7 +42,7 @@
           }
         });
       },
-      { threshold: 0.35 }
+      { threshold: 0.15 }
     );
     revealRoots.forEach(function (root) {
       // The header is always visible on load; skip observing it.
