@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+
+# Impeccable working state (ephemeral; DESIGN.md and .impeccable/design.json are kept)
+.impeccable/build/
+.impeccable/mocks/

@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-24T03:57:01.770Z",
+        "reason": "Agent: verified false positive — computed padding measured live via headless browser is 64-96px on .hero/.specs/.certifications and 32px on .cert-panel (all well above the 8-16px floor); detector's shorthand parser appears to mis-split the commas inside clamp(a, b, c) padding values"
+      },
+      {
+        "rule": "overused-font",
+        "value": "space grotesk",
+        "createdAt": "2026-09-24T03:57:01.913Z",
+        "reason": "Agent design decision (not yet confirmed by user): chosen deliberately for the Latin wordmark/numerals' technical, precision-instrument character in the blueprint/datasheet direction; Korean body/heading text still renders via the Pretendard fallback regardless. Flagged to user as reversible if they'd prefer a more distinctive face."
+      }
+    ]
+  }
+}

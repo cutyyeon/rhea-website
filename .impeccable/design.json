@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T00:00:00.000Z",
+  "title": "Design System: Rhea",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#F5F7F7", "tonalRamp": ["#0E1418", "#141C21", "#1B2429", "#3A464C", "#7C8790", "#B7C1C0", "#D8DEDD", "#F5F7F7"] },
+      "paper-raised": { "role": "neutral", "displayName": "Paper Raised", "canonical": "#FFFFFF", "tonalRamp": ["#141C21", "#1C262C", "#2B383F", "#5A6B72", "#9AA9AD", "#C8D2D2", "#E9EFEF", "#FFFFFF"] },
+      "ink": { "role": "neutral", "displayName": "Near-Black Ink", "canonical": "#10151A", "tonalRamp": ["#10151A", "#1D262D", "#323F47", "#4A5560", "#7C8790", "#AEBBBD", "#D8DEDD", "#EDF2F2"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#4A5560", "tonalRamp": ["#10151A", "#232D33", "#3A464C", "#4A5560", "#6B7880", "#96A2A8", "#C4CDCE", "#EDF2F2"] },
+      "ink-faint": { "role": "neutral", "displayName": "Faint Ink", "canonical": "#5B6670", "tonalRamp": ["#10151A", "#2B363C", "#4A5560", "#5B6670", "#7C8790", "#A0ACB0", "#C9D2D3", "#EDF2F2"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#D8DEDD", "tonalRamp": ["#10151A", "#33403F", "#5C6968", "#8A9695", "#B7C1C0", "#D8DEDD", "#EAEEED", "#F8FAFA"] },
+      "line-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "#B7C1C0", "tonalRamp": ["#10151A", "#2C3737", "#4E5B5A", "#7E8B8A", "#B7C1C0", "#CBD3D2", "#DEE4E3", "#F0F3F3"] },
+      "accent": { "role": "primary", "displayName": "Signal Teal", "canonical": "#0B7285", "tonalRamp": ["#052C34", "#0A4650", "#0B7285", "#0E8AA1", "#3EA6B8", "#7EC5D2", "#BEE3EA", "#E4F1F1"] },
+      "accent-figure": { "role": "primary", "displayName": "Signal Teal Figure", "canonical": "#0B7285", "tonalRamp": ["#052C34", "#0A4650", "#0B7285", "#4FB8C4", "#6FC6D0", "#9AD8DF", "#C6E9ED", "#E4F1F1"] },
+      "accent-ink": { "role": "primary", "displayName": "Teal Ink", "canonical": "#063E46", "tonalRamp": ["#031E22", "#063E46", "#0A5660", "#12727F", "#4FA0AA", "#8FC5CB", "#CFF0F1", "#E9F8F8"] },
+      "accent-soft": { "role": "primary", "displayName": "Teal Soft", "canonical": "#E4F1F1", "tonalRamp": ["#17383D", "#1F484E", "#2E6068", "#4C8890", "#7BB4BA", "#AFD6D9", "#E4F1F1", "#F4FAFA"] },
+      "navy": { "role": "neutral", "displayName": "Compliance Navy", "canonical": "#0B1220", "tonalRamp": ["#05070C", "#0B1220", "#141F33", "#26313F", "#4A5C6E", "#7E93A0", "#B7C4CC", "#E8EDF0"] },
+      "navy-ink": { "role": "neutral", "displayName": "Navy Ink", "canonical": "#E8EDF0", "tonalRamp": ["#0B1220", "#26313F", "#4A5C6E", "#7E93A0", "#9FB0BA", "#C4D0D6", "#E8EDF0", "#F5F8F9"] },
+      "navy-ink-soft": { "role": "neutral", "displayName": "Navy Ink Soft", "canonical": "#9FB0BA", "tonalRamp": ["#0B1220", "#26313F", "#4A5C6E", "#7E93A0", "#9FB0BA", "#B9C6CD", "#D6E0E3", "#EEF2F3"] },
+      "navy-accent": { "role": "secondary", "displayName": "Navy Cyan Accent", "canonical": "#5FC9C9", "tonalRamp": ["#0F3A3A", "#1B5757", "#2C7A7A", "#3F9C9C", "#5FC9C9", "#8AD8D8", "#B7E7E7", "#E2F5F5"] },
+      "navy-line": { "role": "neutral", "displayName": "Navy Line", "canonical": "#26313F", "tonalRamp": ["#0B1220", "#151E2A", "#26313F", "#3B4A5A", "#5E7080", "#8D9CA8", "#C0CAD1", "#E8EDF0"] },
+      "error": { "role": "neutral", "displayName": "Form Error Red", "canonical": "#B3261E", "tonalRamp": ["#3A0D0A", "#5E1512", "#8A1F1A", "#B3261E", "#CC4A42", "#DE8079", "#EFB8B3", "#F9E2E0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display / H1", "purpose": "Hero heading only." },
+      "headline": { "displayName": "Headline / H2", "purpose": "Section headings (설계 원칙, 사양, 워크플로, 인증, 문의)." },
+      "title": { "displayName": "Title / H3", "purpose": "Spine-item and workflow-step sub-headings." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, max-width 68ch via --measure." },
+      "mono": { "displayName": "Mono / Spec Data", "purpose": "Spec table values, rotor caption, dimension labels, workflow tag; always tabular-nums, used for both real and pending values." },
+      "lede": { "displayName": "Lede", "purpose": "Section-intro paragraphs (1.05rem)." },
+      "ui": { "displayName": "UI / Secondary", "purpose": "Nav links, secondary buttons, table and workflow body text (0.94rem; the CSS's former 0.95/0.96rem one-offs were consolidated into this step)." },
+      "small": { "displayName": "Small", "purpose": "Footnotes, form labels/status, footer text (0.88rem; former 0.86rem folded in)." },
+      "caption": { "displayName": "Caption", "purpose": "Rotor caption, footer meta — mono, 0.82rem." },
+      "tag": { "displayName": "Tag", "purpose": "The workflow step's single product-tag pill only (0.72rem/600) — not a general kicker." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "rotor-rotate", "value": "linear 22s infinite, transform-origin center; disabled under prefers-reduced-motion", "purpose": "Continuous slow rotation of the hero rotor blueprint's ring/slot/hub group." },
+      { "name": "reveal-progressive-enhancement", "value": "content visible by default in CSS; JS adds .js-reveal only once IntersectionObserver is confirmed running, then toggles .is-visible on intersect", "purpose": "Spine draw-in and workflow step fade/rise, without ever risking hidden content on script failure." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for button/nav/form/reveal transitions." }
+    ],
+    "breakpoints": [
+      { "name": "nav-desktop", "value": "860px" },
+      { "name": "hero-two-col", "value": "940px" },
+      { "name": "form-split", "value": "480px" },
+      { "name": "contact-two-col", "value": "900px" },
+      { "name": "workflow-four-col", "value": "780px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid-fill teal CTA, used for '사양서 요청' and form submit.",
+      "html": "<a class=\"ds-btn ds-btn-accent\" href=\"#contact\">사양서 요청</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; border-radius: 3px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform 180ms cubic-bezier(0.16,1,0.3,1), background 180ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-accent { background: #0B7285; color: #fff; } .ds-btn-accent:hover { filter: brightness(1.15); } .ds-btn-accent:active { transform: scale(0.98); } .ds-btn-accent:focus-visible { outline: 2px solid #4FB8C4; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outline secondary CTA, used for '개요 살펴보기'.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#overview\">개요 살펴보기</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; border-radius: 3px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: border-color 180ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost { background: transparent; border-color: #B7C1C0; color: #10151A; } .ds-btn-ghost:hover { border-color: #10151A; } .ds-btn-ghost:focus-visible { outline: 2px solid #0B7285; outline-offset: 3px; }"
+    },
+    {
+      "name": "Spec Table Row",
+      "kind": "custom",
+      "refersTo": "spec-table",
+      "description": "Datasheet spec row with mono tabular-nums values; unresolved specs render as italic pending-value text instead of a fabricated number.",
+      "html": "<table class=\"ds-spec-table\"><tbody><tr><th scope=\"row\">최대 회전속도</th><td class=\"ds-pending-value\">사양 확정 예정</td></tr><tr><th scope=\"row\">모델명</th><td>Rhea</td></tr></tbody></table>",
+      "css": ".ds-spec-table { width: 100%; max-width: 760px; border-collapse: collapse; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.94rem; font-variant-numeric: tabular-nums; } .ds-spec-table tr { border-bottom: 1px solid #D8DEDD; } .ds-spec-table tr:first-child { border-top: 1px solid #D8DEDD; } .ds-spec-table th, .ds-spec-table td { text-align: left; padding: 0.85rem 1rem; font-weight: 400; } .ds-spec-table th { color: #4A5560; font-family: 'Pretendard Variable', sans-serif; width: 40%; } .ds-spec-table td { color: #10151A; } .ds-pending-value { font-style: italic; color: #7C8790; }"
+    },
+    {
+      "name": "Spine List Item",
+      "kind": "custom",
+      "refersTo": "spine",
+      "description": "Leader-line motif: vertical hairline spine with a filled tick per item, used for the '설계 원칙' list.",
+      "html": "<div class=\"ds-spine\"><div class=\"ds-spine-line\" aria-hidden=\"true\"></div><article class=\"ds-spine-item\"><span class=\"ds-spine-tick\" aria-hidden=\"true\"></span><h3 class=\"ds-spine-h3\">로터 안정성</h3><p class=\"ds-spine-p\">정밀 밸런싱 설계로 고속 구동 시 진동을 최소화합니다.</p></article></div>",
+      "css": ".ds-spine { position: relative; padding-left: 2.4rem; } .ds-spine-line { position: absolute; left: 0.5rem; top: 0.4rem; bottom: 0.4rem; width: 1px; background: #B7C1C0; } .ds-spine-item { position: relative; padding: 0 0 2rem; max-width: 60ch; } .ds-spine-tick { position: absolute; left: -2.4rem; top: 0.35rem; width: 1rem; height: 1px; background: #B7C1C0; } .ds-spine-tick::before { content: ''; position: absolute; left: -0.32rem; top: -0.28rem; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: #0B7285; } .ds-spine-h3 { font-family: 'Space Grotesk', 'Pretendard Variable', sans-serif; font-weight: 600; font-size: 1.15rem; margin: 0 0 0.5rem; color: #10151A; } .ds-spine-p { margin: 0; color: #4A5560; }"
+    },
+    {
+      "name": "Workflow Step",
+      "kind": "custom",
+      "refersTo": "workflow-diagram",
+      "description": "One step in the 4-step workflow diagram; active step carries a filled dot and a mono product tag.",
+      "html": "<li class=\"ds-workflow-step ds-workflow-step-active\"><span class=\"ds-workflow-dot\" aria-hidden=\"true\"></span><h3 class=\"ds-workflow-h3\">원심분리 <span class=\"ds-workflow-tag\">Rhea</span></h3><p class=\"ds-workflow-p\">Rhea가 정밀 속도 제어를 통해 세포를 농축·분획합니다.</p></li>",
+      "css": ".ds-workflow-step { position: relative; padding-top: 1.6rem; list-style: none; } .ds-workflow-dot { position: absolute; top: 0; left: 0; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: #FFFFFF; border: 1.4px solid #10151A; } .ds-workflow-step-active .ds-workflow-dot { background: #0B7285; border-color: #0B7285; } .ds-workflow-h3 { font-family: 'Space Grotesk', 'Pretendard Variable', sans-serif; font-size: 1.02rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem; color: #10151A; } .ds-workflow-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.02em; color: #063E46; background: #E4F1F1; padding: 0.15rem 0.45rem; border-radius: 999px; } .ds-workflow-p { margin: 0; font-size: 0.94rem; color: #4A5560; }"
+    },
+    {
+      "name": "Contact Input",
+      "kind": "input",
+      "refersTo": "contact-form",
+      "description": "Text input as used in the spec-sheet request form; focus shifts border to the accent-figure token, errors only show post-interaction.",
+      "html": "<div class=\"ds-form-row\"><label for=\"ds-org\">기관명 *</label><input id=\"ds-org\" type=\"text\" required /></div>",
+      "css": ".ds-form-row { display: flex; flex-direction: column; gap: 0.4rem; } .ds-form-row label { font-size: 0.88rem; color: #4A5560; font-family: 'Pretendard Variable', sans-serif; } .ds-form-row input { border: 1px solid #B7C1C0; border-radius: 3px; padding: 0.7rem 0.85rem; background: #F5F7F7; font-size: 0.96rem; transition: border-color 180ms cubic-bezier(0.16,1,0.3,1); } .ds-form-row input:focus { border-color: #0B7285; outline: none; } .ds-form-row input:user-invalid { border-color: #B3261E; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineering Datasheet",
+    "overview": "Rhea's website is built to read like the spec sheet a procurement buyer already trusts, not a consumer SaaS landing page. The visual language borrows directly from engineering drawings: hairline rules, dimension/leader lines with small perpendicular ticks, tabular-numeral spec data, and a paper-white ground with near-black ink. Corners are sharp-to-slightly-eased (3-6px), never softly rounded in the consumer sense. The one accent color (signal teal) is used sparingly and functionally -- for solid CTA fills and for decorative strokes/focus rings -- never as decoration for its own sake. This is explicitly not the generic hero-photo-plus-three-equal-cards template. The hero pairs a one-line mechanism statement with an animated inline SVG rotor blueprint rather than a stock photo or a big single metric. Every recurring visual device (dimension ticks, leader lines, hairline dividers, mono-set data) is drawn from the same drafting-table vocabulary, so the 설계 원칙 spine, the hero rotor diagram, and the workflow connector line all read as one system rather than three unrelated components. Because real spec numbers and certifications have not arrived yet, the system also carries an honesty convention: unresolved data is rendered in an explicit .pending-value style (italic, faint ink) rather than a fabricated number -- the placeholder state is a first-class part of the visual system, not a bug to hide.",
+    "keyCharacteristics": [
+      "Paper-white ground, near-black ink, one signal-teal accent -- no secondary/tertiary hues.",
+      "Hairline (1px) rules as the primary structural device; no drop shadows.",
+      "Dimension-line / leader-line motif (ticks + connector lines) recurring across hero, principles, and workflow.",
+      "IBM Plex Mono with tabular-nums for all spec/dimension data; Space Grotesk + Pretendard Variable for headings; Pretendard Variable for body.",
+      "Sharp, minimal corners (3-6px), never consumer-soft rounding."
+    ],
+    "rules": [
+      { "name": "The Solid-Fill Accent Rule", "body": "--color-accent is the only token allowed as a solid background carrying white text (buttons, filled tags). It never shifts between light/dark mode, precisely because dark-mode brightening would break white-text contrast. --color-accent-figure is the token for everything decorative (strokes, rings, focus outlines) and is the one that gets to brighten in dark mode.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "Signal Teal is the only chromatic accent on the paper surface. The navy palette is not a second brand accent -- it is confined to the certifications section as a distinct pending-compliance zone and must not leak into other sections.", "section": "colors" },
+      { "name": "The Tabular-Nums Rule", "body": "Any element carrying measured or numeric data (.spec-table, .pending-value, .rotor-caption) is set in IBM Plex Mono with font-variant-numeric: tabular-nums, whether the value is a real number or the honest placeholder \"사양 확정 예정.\" The mono treatment marks this is spec data, independent of whether the data itself has arrived.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Structure is drawn, not lit. Every visual boundary in this system is a hairline rule or a background-tone step; box-shadow is reserved for none of the current components and should not be introduced to fake elevation.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep --color-accent reserved for solid fills carrying white text, and use --color-accent-figure for every decorative stroke/icon/focus-ring instance instead.",
+      "Do render any unresolved spec, certification, or contact value as .pending-value (italic, --color-ink-faint, \"확정 예정\" language) rather than a placeholder number -- this is a content-honesty convention, not a stopgap to remove later.",
+      "Do keep new reveal-animated sections visible-by-default in CSS and gate the hide/reveal transition behind a JS-added .js-reveal class, exactly as .spine and [data-reveal-root] do.",
+      "Do set any measured or dimensional value in IBM Plex Mono with tabular-nums, whether the value is real or pending.",
+      "Do draw structure with 1px hairline rules and background-tone steps (paper vs. paper-raised); never introduce box-shadow to imply elevation."
+    ],
+    "donts": [
+      "Don't brighten --color-accent for dark mode -- it backs white button text and a brighter teal fails contrast; brighten --color-accent-figure instead.",
+      "Don't apply soft/large corner radii (the consumer 12px+ style) anywhere; the system caps at --radius-md (6px).",
+      "Don't invent spec numbers, certification names, or badges before the real spec sheet/certificates arrive -- the certifications panel and spec table must keep stating \"확정 예정\" honestly.",
+      "Don't promote the workflow step's single product tag pill into a general kicker/eyebrow pattern above headings elsewhere in the system -- it exists once, tied to the active workflow step, not as a reusable heading decoration.",
+      "Don't add drop shadows, gradients, glyph icon fonts, or system display faces; every icon in this build is inline authored SVG and headings use Space Grotesk/Pretendard, not a system font stack."
+    ]
+  }
+}
