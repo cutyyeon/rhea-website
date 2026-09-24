@@ -32,9 +32,9 @@
   --color-inverse-canvas: #ffffff;
   --color-semantic-success: #27a644;
 
-  /* typography — Linear families via DESIGN.md's documented substitutes */
-  --font-display: "Inter", "SF Pro Display", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-text: "Inter", "SF Pro Display", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  /* typography — Pretendard (DESIGN.md Note on Font Substitutes) */
+  --font-display: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-text: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
 
   /* rounded */
   --rounded-xs: 4px;

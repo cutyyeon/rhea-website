@@ -344,6 +344,8 @@ The marketing surface treats Display and Text as one continuous voice; the famil
 
 ### Note on Font Substitutes
 
+**Rhea site default: Pretendard** (variable, weights 400 / 500 / 600) for display and text, chosen 2026-09-24 so Hangul and Latin share one typeface; Pretendard's Latin is Inter-based, so the Linear cadence below still holds. Fallback stack: `Pretendard Variable, Pretendard, -apple-system, system-ui, Segoe UI, Roboto, sans-serif`.
+
 Linear's custom typeface isn't publicly distributed; the documented fallback `SF Pro Display, -apple-system, system-ui` is the recommended substitute on macOS. For cross-platform implementation, **Inter** at weight 500 / 600 / 700 is the closest free substitute. **Geist Sans** is also viable. For mono, **JetBrains Mono** or **Geist Mono** at weight 400 closely approximates Linear Mono.
 
 ## Layout
